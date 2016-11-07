@@ -19,30 +19,47 @@
                 <div class="ui large divider hidden"></div>
                 <h1 class="ui header">IntroDB Project</h1>
                 <div class="ui divider hidden"></div>
-                <div class="ui secondary pointing menu">
-                    <a class="active item">Home</a>
-                    <a class="item">Messages</a>
-                    <a class="item">Friends</a>
-                    <div class="right menu">
-                        <a class="ui item">Logout</a>
-                    </div>
+                <div class="ui top attached tabular menu">
+                    <a class="active item" data-tab="Employee">Employee</a>
+                    <a class="item" data-tab="Customer">Customer</a>
+                    <a class="item" data-tab="Publisher">Publisher</a>
+                    <a class="item" data-tab="Product">Product</a>
+                    <a class="item" data-tab="Order">Order</a>
+                    <a class="item" data-tab="Invoice">Invoice</a>
                 </div>
                 <div class="ui medium divider hidden"></div>
-                <div class="ui very relaxed segment">
-                    <p>Hi, {{userName}}. Please click the following button to send request to server.</p>
-                    <div ng-if="requestResult" class="ui tertiary teal inverted segment">
-                        <h4 class="ui header">Request response:</h4>
-                        <div class="ui basic tertiary teal inverted segment">
-                            <p><span ng-repeat="str in requestResult.firstStrList">{{str}}&nbsp;</span></p>
-                            <p><span ng-repeat="str in requestResult.secondStrList">{{str}}&nbsp;</span></p>
+                <div class="ui bottom attached tab segment active" data-tab="Employee">
+                    <div class="ui very relaxed segment">
+                        <p>Hi, {{userName}}. Please click the following button to send request to server.</p>
+                        <div ng-if="requestResult" class="ui tertiary teal inverted segment">
+                            <h4 class="ui header">Request response:</h4>
+                            <div class="ui basic tertiary teal inverted segment">
+                                <p><span ng-repeat="str in requestResult.firstStrList">{{str}}&nbsp;</span></p>
+                                <p><span ng-repeat="str in requestResult.secondStrList">{{str}}&nbsp;</span></p>
+                            </div>
                         </div>
+                        <button class="ui blue button" ng-click="getResponse()">
+                            <i class="External user"></i> Get Response
+                        </button>
+                        <button class="ui blue button" ng-click="queryDB()">
+                            <i class="External user"></i> Query DB
+                        </button>
                     </div>
-                    <button class="ui blue button" ng-click="getResponse()">
-                        <i class="External user"></i> Get Response
-                    </button>
-                    <button class="ui blue button" ng-click="queryDB()">
-                        <i class="External user"></i> Query DB
-                    </button>
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="Customer">
+                    All about Customer
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="Publisher">
+                    All about Publisher
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="Product">
+                    All about Product
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="Order">
+                    All about Order
+                </div>
+                <div class="ui bottom attached tab segment" data-tab="Invoice">
+                    All about Invoice
                 </div>
             </div>
         </div>
