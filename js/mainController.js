@@ -4,6 +4,8 @@ app.controller('mainController', function($scope, $http) {
 
     $scope.userName = "Sherry Chou";
 
+    $('.tabular.menu .item').tab();
+
     $scope.getResponse = function() {
 
         sendData = {
@@ -49,6 +51,3 @@ app.controller('mainController', function($scope, $http) {
     }
 
 });
-
-$('.meanu .item')
-    .tab();
