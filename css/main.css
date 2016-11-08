@@ -5,3 +5,7 @@
 .ui.medium.divider{
 	padding:1rem;
 }
+
+.ui.vertical.inverted.sidebar.menu.left.overlay{
+	background: #a16e9e
+}

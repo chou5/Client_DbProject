@@ -4,7 +4,7 @@ app.controller('mainController', function($scope, $http) {
 
     $scope.userName = "Sherry Chou";
 
-    $('.tabular.menu .item').tab();
+    $('.tabular.menu .item').tab({history:false});
 
     $scope.getResponse = function() {
 
