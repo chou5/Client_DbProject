@@ -13,7 +13,7 @@
 </head>
 
 <body ng-app="myApp" ng-controller="mainController">
-    <div class="ui centered grid">
+    <div class="ui grid">
         <div class="row">
             <div class="four wide column">
                 <div class="ui vertical inverted sidebar menu left overlay visible">
@@ -28,20 +28,20 @@
                 </a>
                 </div>
             </div>
-            <div class="twelve wide column">
+            <div class="very relaxed ten wide column">
                 <div class="ui large divider hidden"></div>
                 <h1 class="ui header">IntroDB Project</h1>
                 <div class="ui divider hidden"></div>
                 <div class="ui top attached tabular menu">
-                    <a class="active item" data-tab="Employee">Employee</a>
-                    <a class="item" data-tab="Customer">Customer</a>
+                    <a class="item" data-tab="Employee">Employee</a>
+                    <a class="active item" data-tab="Customer">Customer</a>
                     <a class="item" data-tab="Publisher">Publisher</a>
                     <a class="item" data-tab="Product">Product</a>
                     <a class="item" data-tab="Order">Order</a>
                     <a class="item" data-tab="Invoice">Invoice</a>
                 </div>
                 <div class="ui medium divider hidden"></div>
-                <div class="ui bottom attached tab segment active" data-tab="Employee">
+                <div class="ui bottom attached tab segment" data-tab="Employee">
                     <div class="ui very relaxed segment">
                         <p>Hi, {{userName}}. Please click the following button to send request to server.</p>
                         <div ng-if="requestResult" class="ui tertiary teal inverted segment">
@@ -60,8 +60,23 @@
                         </button>
                     </div>
                 </div>
-                <div class="ui bottom attached tab segment" data-tab="Customer">
-                    All about Customer
+                <div class="ui bottom attached tab segment active" data-tab="Customer">
+                    <h5 class="ui dividing header">This is an example for using ng-model</h5>
+                    <form class="ui form" ng-class="{success:requestResult}">
+                        <div class="field">
+                            <label>First Name</label>
+                            <input type="text" name="first-name" ng-model="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="field">
+                            <label>Last Name</label>
+                            <input type="text" name="last-name" ng-model="last_name" placeholder="Last Name" required>
+                        </div>
+                        <div class="ui success message">
+                            <div class="header">Form Completed</div>
+                            <p>{{requestResult.message}}</p>
+                        </div>
+                        <button ng-click="sendForm()" class="ui button">Submit</button>
+                    </form>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Publisher">
                     All about Publisher
