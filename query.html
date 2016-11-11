@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <title>New</title>
+    <title>Query</title>
     <script type="text/javascript" src="dist/angular.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/mainController.js"></script>
@@ -18,19 +15,19 @@
             <div class="four wide column">
                 <div class="ui vertical inverted sidebar menu left overlay visible">
                     <a href="index.html" class="item">
-                        About
-                    </a>
+                    About
+                </a>
+                    <a href="new.html" class="item">
+                    New
+                </a>
                     <a class="active item">
-                        New
-                    </a>
-                    <a href="query.html" class="item">
-                        Query
-                    </a>
+                    Query
+                </a>
                 </div>
             </div>
             <div class="very relaxed ten wide column">
                 <div class="ui large divider hidden"></div>
-                <h1 class="ui header"><i class="add circle icon"></i>New</h1>
+                <h1 class="ui header"><i class="search icon"></i>Query</h1>
                 <div class="ui divider hidden"></div>
                 <div class="ui top attached tabular menu">
                     <a class="item" data-tab="Example">Example</a>
@@ -83,76 +80,26 @@
                 <div class="ui bottom attached tab segment" data-tab="Employee">
                     <div class="ui very relaxed segment">
                         <form class="ui form">
-                            <h3 class="ui dividing header">Employee Information</h3>
-                            <label>Name</label>
-                            <div class="two fields">
-                                <div class="field">
-                                    <input type="text" name="emp_fname" placeholder="First Name" required>
-                                </div>
-                                <div class="field">
-                                    <input type="text" name="emp_lname" placeholder="Last Name" required>
-                                </div>
-                            </div>
-                            <div class="two fields">
-                                <div class="field">
-                                    <label>Gender</label>
-                                    <select class="ui fluid dropdown" required>
-                                        <option value="">Gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
-                                </div>
-                                <div class="field">
-                                    <label>Date Of Birth</label>
-                                    <input type="text" name="emp_dob" placeholder="yyyy/mm/dd" required>
+                            <h4 class="ui dividing header">Employee Infomation</h4>
+                            <div class="field">
+                                <label>Name</label>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <input type="text" name="emp_fname" placeholder="First Name">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" name="emp_lname" placeholder="Last Name">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="two fields">
-                                <div class="field">
-                                    <label>Phone Number</label>
-                                    <input type="text" name="emp_phone" placeholder="Phone Number" required>
-                                </div>
-                                <div class="field">
-                                    <label>Email Address</label>
-                                    <input type="text" name="emp_email" placeholder="Email Address" required>
-                                </div>
+                            <div class="three fields">
+                                <label>Gender</label>
+                                <select class="ui fluid dropdown">
+                                    <option value="">Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
-                            <div class="two fields">
-                                <div class="field">
-                                    <label>Title</label>
-                                    <input type="text" name="emp_title" placeholder="Title" required>
-                                </div>
-                                <div class="field">
-                                    <label>Department</label>
-                                    <select class="ui fluid dropdown" required>
-                                        <option value="">Department</option>
-                                        <option value="sales">Sales</option>
-                                        <option value="product">Product</option>
-                                        <option value="financial">Financial</option>
-                                        <option value="human_resources">Human Resources</option>
-                                        <option value="management">Management</option>
-                                        <option value="marketing">Marketing</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="two fields">
-                                <div class="field">
-                                    <label>Region</label>
-                                    <select class="ui fluid dropdown" required>
-                                        <option value="">Region</option>
-                                        <option value="south">South</option>
-                                        <option value="north">North</option>
-                                        <option value="center">Center</option>
-                                        <option value="east">East</option>
-                                        <option value="foreign">Foreign</option>
-                                    </select>
-                                </div>
-                                <div class="field">
-                                    <label>Start Date</label>
-                                    <input type="text" name="emp_startDate" placeholder="yyyy/mm/dd" required>
-                                </div>
-                            </div>
-                            <button class="ui button" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>
