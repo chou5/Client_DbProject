@@ -82,7 +82,46 @@
                     </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Customer">
-                    All about Customer
+                    <div class="ui very relaxed segment">
+                        <form class="ui form">
+                            <h3 class="ui dividing header">Customer Information</h3>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input type="text" name="cus_name" placeholder="Name" required>
+                                </div>
+                                <div class="field">
+                                    <label>Contact Person</label>
+                                    <input type="text" name="cus_contactPerson" placeholder="Contact Person" required>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" name="cus_email" placeholder="Email" required>
+                                </div>
+                                <div class="field">
+                                    <label>Phone Number</label>
+                                    <input type="text" name="cus_phone" placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Address</label>
+                                <input type="text" name="cus_address" placeholder="Address" required>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Country/Region</label>
+                                    <input type="text" name="cus_region" placeholder="Country/Region" required>
+                                </div>
+                                <div class="field">
+                                    <label>Sales Person ID Number</label>
+                                    <input type="text" name="cus_empId" placeholder="Sales Person ID Number" required>
+                                </div>
+                            </div>
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Employee">
                     <div class="ui very relaxed segment">
@@ -161,16 +200,185 @@
                     </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Publisher">
-                    All about Publisher
+                    <div class="ui very relaxed segment">
+                        <form class="ui form">
+                            <h3 class="ui dividing header">Publisher Information</h3>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input type="text" name="pub_name" placeholder="Name" required>
+                                </div>
+                                <div class="field">
+                                    <label>Contact Person</label>
+                                    <input type="text" name="pub_contactPerson" placeholder="Contact Person" required>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Email</label>
+                                    <input type="text" name="pub_email" placeholder="Email" required>
+                                </div>
+                                <div class="field">
+                                    <label>Phone Number</label>
+                                    <input type="text" name="pub_phone" placeholder="Phone Number" required>
+                                </div>
+                            </div>
+                            <div class="fields">
+                                <div class="twelve wide field">
+                                    <label>Address</label>
+                                    <input type="text" name="pub_address" placeholder="Address" required>
+                                </div>
+                                <div class="four wide field">
+                                    <label>Country</label>
+                                    <input type="text" name="pub_country" placeholder="Country" required>
+                                </div>
+                            </div>
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Product">
-                    All about Product
+                    <div class="ui very relaxed segment">
+                        <form class="ui form">
+                            <h3 class="ui dividing header">Product Information</h3>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Name</label>
+                                    <input type="text" name="prod_name" placeholder="Name" required>
+                                </div>
+                                <div class="field">
+                                    <label>Subscription Model</label>
+                                    <select class="ui fluid dropdown" required>
+                                        <option value="">Subscription Model</option>
+                                        <option value="yearly">Yearly</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="weekly">Weekly</option>
+                                        <option value="daily">Daily</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="three fields">
+                                <div class="field">
+                                    <label>Type</label>
+                                    <select class="ui fluid dropdown" required>
+                                        <option value="">Type</option>
+                                        <option value="database">Database</option>
+                                        <option value="e-book">E-book</option>
+                                        <option value="e-journal">E-journal</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Price in USD</label>
+                                    <input type="text" name="prod_priceUSD" placeholder="USD" required>
+                                </div>
+                                <div class="field">
+                                    <label>Price in NTD</label>
+                                    <input type="text" name="prod_priceNTD" placeholder="NTD" required>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label>Product Description</label>
+                                <input type="text" name="prod_description" placeholder="Product Description">
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Publisher ID Number</label>
+                                    <input type="text" name="prod_pubId" placeholder="Publisher ID Number" required>
+                                </div>
+                                <div class="field">
+                                    <label>Product Specialist ID Number</label>
+                                    <input type="text" name="pub_empId" placeholder="Product Specialist ID Number" required>
+                                </div>
+                            </div>
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Order">
-                    All about Order
+                    <div class="ui very relaxed segment">
+                        <form class="ui form">
+                            <h3 class="ui dividing header">Order Information</h3>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Order Date</label>
+                                    <input type="text" name="ord_orderDate" placeholder="yyyy/mm/dd" required>
+                                </div>
+                                <div class="field">
+                                    <label>Invoice ID Number</label>
+                                    <input type="text" name="ord_invId" placeholder="Invoice ID Number" required>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Price</label>
+                                    <input type="text" name="ord_price" placeholder="USD" required>
+                                </div>
+                                <div class="field">
+                                    <label>Quantity</label>
+                                    <input type="text" name="ord_quantity" placeholder="Quantity" required>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Subscription Start Date</label>
+                                    <input type="text" name="ord_subStartDate" placeholder="yyyy/mm/dd" required>
+                                </div>
+                                <div class="field">
+                                    <label>Subscription End Date</label>
+                                    <input type="text" name="ord_subEndDate" placeholder="yyyy/mm/dd" required>
+                                </div>
+                            </div>
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="ui bottom attached tab segment" data-tab="Invoice">
-                    All about Invoice
+                    <div class="ui very relaxed segment">
+                        <form class="ui form">
+                            <h3 class="ui dividing header">Invoice Information</h3>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Issued Date</label>
+                                    <input type="text" name="inv_issuedDate" placeholder="yyyy/mm/dd" required>
+                                </div>
+                                <div class="field">
+                                    <label>Payment Date</label>
+                                    <input type="text" name="inv_paymentDate" placeholder="yyyy/mm/dd" required>
+                                </div>
+                            </div>
+                            <div class="three fields">
+                                <div class="field">
+                                    <label>Quarter</label>
+                                    <select class="ui fluid dropdown" required>
+                                        <option value="">Quarter</option>
+                                        <option value="q1">Q1</option>
+                                        <option value="q2">Q2</option>
+                                        <option value="q3">Q3</option>
+                                        <option value="q4">Q4</option>
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label>Amount in USD</label>
+                                    <input type="text" name="inv_amountUSD" placeholder="USD" required>
+                                </div>
+                                <div class="field">
+                                    <label>Amount in NTD</label>
+                                    <input type="text" name="inv_amountNTD" placeholder="NTD" required>
+                                </div>
+                            </div>
+                            <div class="two fields">
+                                <div class="field">
+                                    <label>Customer ID Number</label>
+                                    <input type="text" name="inv_cusId" placeholder="Customer ID Number" required>
+                                </div>
+                                <div class="field">
+                                    <label>Annotation</label>
+                                    <input type="text" name="inv_annotation" placeholder="Annotation">
+                                </div>
+                            </div>
+                            <button class="ui button" type="submit">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
