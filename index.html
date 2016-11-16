@@ -30,94 +30,18 @@
             </div>
             <div class="very relaxed ten wide column">
                 <div class="ui large divider hidden"></div>
-                <h1 class="ui header"><i class="home icon"></i>About</h1>
-                <div class="ui divider hidden"></div>
-                <div class="ui top attached tabular menu">
-                    <a class="item" data-tab="Example">Example</a>
-                    <a class="active item" data-tab="Customer">Customer</a>
-                    <a class="item" data-tab="Employee">Employee</a>
-                    <a class="item" data-tab="Publisher">Publisher</a>
-                    <a class="item" data-tab="Product">Product</a>
-                    <a class="item" data-tab="Order">Order</a>
-                    <a class="item" data-tab="Invoice">Invoice</a>
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Example">
-                    <div class="ui very relaxed segment">
-                        <p>Hi, {{userName}}. Please click the following button to send request to server.</p>
-                        <div ng-if="requestResult" class="ui tertiary teal inverted segment">
-                            <h4 class="ui header">Request response:</h4>
-                            <div class="ui basic tertiary teal inverted segment">
-                                <p><span ng-repeat="str in requestResult.firstStrList">{{str}}&nbsp;</span></p>
-                                <p><span ng-repeat="str in requestResult.secondStrList">{{str}}&nbsp;</span></p>
-                                <p><span ng-repeat="str in requestResult.thirdStrList">{{str}}&nbsp;</span></p>
-                            </div>
+                <div class="ui container">
+                    <h1 class="ui header">
+                    <i class="big home icon"></i>
+                    <div class="content">About
+                        <div class="sub header">
+                            Here we briefly describe what we do in our project. 
                         </div>
-                        <button class="ui blue button" ng-click="getResponse()">
-                            <i class="External user"></i> Get Response
-                        </button>
-                        <button class="ui blue button" ng-click="queryDB()">
-                            <i class="External user"></i> Query DB
-                        </button>
                     </div>
+                </h1>
                 </div>
-                <div class="ui bottom attached tab segment active" data-tab="Customer">
-                    <div class="ui very relaxed segment">
-                        <h5 class="ui dividing header">This is an example for using ng-model</h5>
-                        <form class="ui form" ng-class="{success:requestResult}">
-                            <div class="field">
-                                <label>First Name</label>
-                                <input type="text" name="first-name" ng-model="first_name" placeholder="First Name" required>
-                            </div>
-                            <div class="field">
-                                <label>Last Name</label>
-                                <input type="text" name="last-name" ng-model="last_name" placeholder="Last Name" required>
-                            </div>
-                            <div class="ui success message">
-                                <div class="header">Form Completed</div>
-                                <p>{{requestResult.message}}</p>
-                            </div>
-                            <button ng-click="sendForm()" class="ui button">Submit</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Employee">
-                    <div class="ui very relaxed segment">
-                        <form class="ui form">
-                            <h4 class="ui dividing header">Employee Infomation</h4>
-                            <div class="field">
-                                <label>Name</label>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <input type="text" name="emp_fname" placeholder="First Name">
-                                    </div>
-                                    <div class="field">
-                                        <input type="text" name="emp_lname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="three fields">
-                                <label>Gender</label>
-                                <select class="ui fluid dropdown">
-                                    <option value="">Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Publisher">
-                    All about Publisher
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Product">
-                    All about Product
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Order">
-                    All about Order
-                </div>
-                <div class="ui bottom attached tab segment" data-tab="Invoice">
-                    All about Invoice
-                </div>
+                <div class="ui divider"></div>
+                Hi
             </div>
         </div>
     </div>
