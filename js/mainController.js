@@ -84,4 +84,10 @@ app.controller('mainController', function($scope, $http) {
 
     }
 
+    $scope.sendCusForm = function(){
+        sendData = {
+            
+        }
+    }
+
 });
