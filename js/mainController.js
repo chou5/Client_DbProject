@@ -154,7 +154,7 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/runSQL",
             data: sendData
-        }),then(function(response){
+        }).then(function(response){
             console.log("Http Request / runSQL - output :");
             var result = response.data;
             console.log(result);
