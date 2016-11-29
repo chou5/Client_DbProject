@@ -112,4 +112,57 @@ app.controller('mainController', function($scope, $http) {
 
     }
 
+
+    $scope.sendEmpForm = function(){
+        sendData = {
+            'cus_name': $scope.cus_name,
+            'cus_contact_person': $scope.cus_contactPerson,
+            'cus_email': $scope.cus_email,
+            'cus_phone': $scope.cus_phone,
+            'cus_address': $scope.cus_address,
+            'cus_region': $scope.cus_region,
+            'cus_empId': $scope.cus_empId
+        }
+
+        console.log("Httpe Request /sendCusForm - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/sendCusForm",
+            data: sendData
+        }).then(function(response){
+            console.log("Http Request / sendForm - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.requestResult = result;
+        });
+
+    }
+
+
+    $scope.runSQL = function(){
+        sendData = {
+            'sqlite_text': $scope.sqlite_text
+        }
+
+        console.log("Httpe Request /runSQL - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/runSQL",
+            data: sendData
+        }),then(function(response){
+            console.log("Http Request / runSQL - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.requestResult = result;
+        
+        });
+    }
+
+
 });

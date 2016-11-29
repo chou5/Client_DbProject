@@ -43,18 +43,20 @@
                         <div class="twelve wide column">
                             <div class="container">
                                 <h4 class="ui header"><i class="code icon"></i>SQLite Statement</h4>
-                                <div class="ui form">
+                                <form class="ui form" ng-class="{success:requestResult}">
                                     <div class="field">
-                                        <textarea></textarea>
+                                        <textarea name="sqlite_text" ng-model="sqlite_text" required></textarea>
                                     </div>
-                                </div>
+                                    <div class="ui success message">
+                                        <div class="header">{{requestResult.message}}</div>
+                                    </div>
+                                    <div class="ui divider hidden"></div>
+                                    <button ng-click="runSQL()" class="ui button">
+                                        Run SQL >>
+                                    </button>
+                                </form>
                                 <div class="ui divider hidden"></div>
-                                <button class="ui button">
-                                    Run SQL >>
-                                </button>
-                                <div class="ui divider hidden"></div>
-                                <h4 class="ui header"><i class="list layout icon"></i>Result</h4>
-                                Here shows the query result.
+                                <h4 class="ui header"><i class="list layout icon"></i>Result</h4> Here shows the query result.
                             </div>
                         </div>
                         <div class="four wide column">
