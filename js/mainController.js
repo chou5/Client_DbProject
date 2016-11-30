@@ -159,6 +159,7 @@ app.controller('mainController', function($scope, $http) {
             var result = response.data;
             console.log(result);
 
+
             $scope.requestResult = result;
         
         });
