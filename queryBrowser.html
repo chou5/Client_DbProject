@@ -12,7 +12,7 @@
 <body ng-app="myApp" ng-controller="mainController">
     <div class="ui grid">
         <div class="row">
-            <div class="four wide column">
+            <div class="three wide column">
                 <div class="ui vertical inverted sidebar menu left overlay visible">
                     <a href="index.html" class="item">
                     About
@@ -25,7 +25,7 @@
                 </a>
                 </div>
             </div>
-            <div class="very relaxed ten wide column">
+            <div class="twelve wide column">
                 <div class="ui large divider hidden"></div>
                 <div class="ui container">
                     <h1 class="ui header">
@@ -40,7 +40,7 @@
                 <div class="ui divider"></div>
                 <div class="ui grid divided">
                     <div class="row">
-                        <div class="twelve wide column">
+                        <div class="thirteen wide column">
                             <div class="container">
                                 <h3 class="ui header"><i class="code icon"></i>SQLite Statement</h3>
                                 <form class="ui form" ng-class="{success:requestResult, error: errorResult}">
@@ -63,17 +63,21 @@
                                 <table class="ui basic table" ng-if="requestResult.table">
                                     <thead>
                                         <tr>
-                                            <th>Table Name</th>
-                                            <th>Records</th>
+                                            <th ng-repeat= "name in requestResult.table_name">{{name}}</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                        <tr ng-repeat="x in requestResult.table">
+                                            <td ng-repeat="y in x">{{y}}</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="notice_msg" ng-if="requestResult.notice">
                                     <h4>{{requestResult.notice}}</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="four wide column">
+                        <div class="three wide column">
                             <div class="container">
                                 <h3 class="ui header"><i class="database icon"></i>Our Database</h3>
                                 <table class="ui basic table">

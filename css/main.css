@@ -10,6 +10,10 @@
     background: #452f54;
 }
 
+.ui.left.sidebar{
+	width:210px;
+}
+
 .ui.header {
     color: #452f54;
 }
