@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="twelve wide column">
                             <div class="container">
-                                <h4 class="ui header"><i class="code icon"></i>SQLite Statement</h4>
+                                <h3 class="ui header"><i class="code icon"></i>SQLite Statement</h3>
                                 <form class="ui form" ng-class="{success:requestResult, error: errorResult}">
                                     <div class="field">
                                         <textarea name="sqlite_text" ng-model="sqlite_text" required></textarea>
@@ -59,8 +59,8 @@
                                     </button>
                                 </form>
                                 <div class="ui divider hidden"></div>
-                                <h4 class="ui header"><i class="list layout icon"></i>Result</h4>
-                                <table class="ui basic table" ng-if="requestResult.result">
+                                <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
+                                <table class="ui basic table" ng-if="requestResult.table">
                                     <thead>
                                         <tr>
                                             <th>Table Name</th>
@@ -68,11 +68,14 @@
                                         </tr>
                                     </thead>
                                 </table>
+                                <div class="notice_msg" ng-if="requestResult.notice">
+                                    <h4>{{requestResult.notice}}</h4>
+                                </div>
                             </div>
                         </div>
                         <div class="four wide column">
                             <div class="container">
-                                <h4 class="ui header"><i class="database icon"></i>Our Database</h4>
+                                <h3 class="ui header"><i class="database icon"></i>Our Database</h3>
                                 <table class="ui basic table">
                                     <thead>
                                         <tr>
