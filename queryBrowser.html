@@ -43,12 +43,15 @@
                         <div class="twelve wide column">
                             <div class="container">
                                 <h4 class="ui header"><i class="code icon"></i>SQLite Statement</h4>
-                                <form class="ui form" ng-class="{success:requestResult}">
+                                <form class="ui form" ng-class="{success:requestResult, error: errorResult}">
                                     <div class="field">
                                         <textarea name="sqlite_text" ng-model="sqlite_text" required></textarea>
                                     </div>
                                     <div class="ui success message">
                                         <div class="header">{{requestResult.message}}</div>
+                                    </div>
+                                    <div class="ui error message">
+                                        <div class="header">{{errorResult}}</div>
                                     </div>
                                     <div class="ui divider hidden"></div>
                                     <button ng-click="runSQL()" class="ui button">
@@ -56,7 +59,15 @@
                                     </button>
                                 </form>
                                 <div class="ui divider hidden"></div>
-                                <h4 class="ui header"><i class="list layout icon"></i>Result</h4> Here shows the query result.
+                                <h4 class="ui header"><i class="list layout icon"></i>Result</h4>
+                                <table class="ui basic table" ng-if="requestResult.result">
+                                    <thead>
+                                        <tr>
+                                            <th>Table Name</th>
+                                            <th>Records</th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                         <div class="four wide column">

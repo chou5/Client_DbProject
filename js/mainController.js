@@ -154,16 +154,17 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/runSQL",
             data: sendData
-        }).then(function(response){
+        }).then(function successCallback(response){
             console.log("Http Request / runSQL - output :");
             var result = response.data;
             console.log(result);
-
-
-            $scope.requestResult = result;
-        
+            $scope.requestResult = result;      
+        }, function errorCallback(response){
+            console.log("Http Request / runSQL - output :");
+            var result = response.data;
+            console.log(result);
+            $scope.errorResult = "Syntax error!"
         });
     }
-
 
 });

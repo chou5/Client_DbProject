@@ -264,10 +264,10 @@
                                         <label>Subscription Model</label>
                                         <select class="ui fluid dropdown" required>
                                             <option value="">Subscription Model</option>
-                                            <option value="yearly">Yearly</option>
-                                            <option value="monthly">Monthly</option>
-                                            <option value="weekly">Weekly</option>
-                                            <option value="daily">Daily</option>
+                                            <option value="yearly_subscription">Yearly Subscription</option>
+                                            <option value="monthly_subscription">Monthly Subscription</option>
+                                            <option value="weekly_subscription">Weekly Subscription</option>
+                                            <option value="one-time_purchase">One-time Purchase</option>
                                         </select>
                                     </div>
                                 </div>
@@ -277,8 +277,8 @@
                                         <select class="ui fluid dropdown" required>
                                             <option value="">Type</option>
                                             <option value="database">Database</option>
-                                            <option value="e-book">E-book</option>
-                                            <option value="e-journal">E-journal</option>
+                                            <option value="e-book">E-Book</option>
+                                            <option value="e-journal">E-Journal</option>
                                         </select>
                                     </div>
                                     <div class="field">
@@ -290,18 +290,14 @@
                                         <input type="text" name="prod_priceNTD" placeholder="NTD" required>
                                     </div>
                                 </div>
-                                <div class="field">
-                                    <label>Product Description</label>
-                                    <input type="text" name="prod_description" placeholder="Product Description">
-                                </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Publisher ID Number</label>
                                         <input type="text" name="prod_pubId" placeholder="Publisher ID Number" required>
                                     </div>
                                     <div class="field">
-                                        <label>Product Specialist ID Number</label>
-                                        <input type="text" name="pub_empId" placeholder="Product Specialist ID Number" required>
+                                        <label>Product Manager ID Number</label>
+                                        <input type="text" name="pub_empId" placeholder="Product Manager ID Number" required>
                                     </div>
                                 </div>
                                 <button class="ui button" type="submit">Submit</button>
