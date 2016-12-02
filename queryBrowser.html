@@ -60,15 +60,15 @@
                                 </form>
                                 <div class="ui divider hidden"></div>
                                 <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
-                                <table class="ui basic table" ng-if="requestResult.table">
+                                <table class="ui celled striped table" ng-if="requestResult.table">
                                     <thead>
                                         <tr>
                                             <th ng-repeat= "name in requestResult.table_name">{{name}}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="x in requestResult.table">
-                                            <td ng-repeat="y in x">{{y}}</td>
+                                        <tr ng-repeat="row in requestResult.table">
+                                            <td ng-repeat="ele in row">{{ele}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
