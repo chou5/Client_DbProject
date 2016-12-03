@@ -22,3 +22,7 @@
     color: rgba(0, 0, 0, .6);
     font-size: 1.14285714rem;
 }
+
+#sqlite_text{
+	height: 16em;
+}

@@ -40,47 +40,30 @@
                 <div class="ui divider"></div>
                 <div class="ui grid divided">
                     <div class="row">
-                        <div class="thirteen wide column">
+                        <div class="twelve wide column">
                             <div class="container">
                                 <h3 class="ui header"><i class="code icon"></i>SQLite Statement</h3>
-                                <form class="ui form" ng-class="{success:requestResult, error: errorResult}">
+                                <form class="ui form" ng-class="{success:requestResult.success, error: requestResult.error, warning: requestResult.warning}">
                                     <div class="field">
-                                        <textarea name="sqlite_text" ng-model="sqlite_text" required></textarea>
+                                        <textarea id="sqlite_text" name="sqlite_text" ng-model="sqlite_text" required></textarea>
                                     </div>
                                     <div class="ui success message">
-                                        <div class="header">{{requestResult.message}}</div>
+                                        <div class="header">{{requestResult.success}}</div>
                                     </div>
                                     <div class="ui error message">
-                                        <div class="header">{{errorResult}}</div>
+                                        <div class="header">{{requestResult.error}}</div>
+                                    </div>
+                                    <div class="ui warning message">
+                                        <div class="header">{{requestResult.warning}}</div>
                                     </div>
                                     <div class="ui divider hidden"></div>
                                     <button ng-click="runSQL()" class="ui button">
                                         Run SQL >>
                                     </button>
                                 </form>
-                                <div class="ui divider hidden"></div>
-                                <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
-                                <div class="result_table" ng-if="requestResult.table">
-                                    <h4>Number of Records: {{requestResult.table_num}}</h4>
-                                    <table class="ui celled striped table">
-                                        <thead>
-                                            <tr>
-                                                <th ng-repeat="name in requestResult.table_name">{{name}}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr ng-repeat="row in requestResult.table">
-                                                <td ng-repeat="ele in row">{{ele}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="notice_msg" ng-if="requestResult.notice">
-                                    <h4>{{requestResult.notice}}</h4>
-                                </div>
                             </div>
                         </div>
-                        <div class="three wide column">
+                        <div class="four wide column">
                             <div class="container">
                                 <h3 class="ui header"><i class="database icon"></i>Our Database</h3>
                                 <table class="ui basic table">
@@ -121,8 +104,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="ui divider"></div>
+                <div class="ui grid">
+                    <div class="row">
+                        <div class="sixteen wide column">
+                            <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
+                            <div class="result_table" ng-if="requestResult.table">
+                                <h4>Number of Records: {{requestResult.table_num}}</h4>
+                                <table class="ui celled striped table">
+                                    <thead>
+                                        <tr>
+                                            <th ng-repeat="name in requestResult.table_name">{{name}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in requestResult.table">
+                                            <td ng-repeat="ele in row">{{ele}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="notice_msg" ng-if="requestResult.notice">
+                                <h4>{{requestResult.notice}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
