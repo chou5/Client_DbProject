@@ -158,7 +158,8 @@ app.controller('mainController', function($scope, $http) {
             console.log("Http Request / runSQL - output :");
             var result = response.data;
             console.log(result);
-            $scope.requestResult = result;      
+            $scope.requestResult = result;   
+            getRecords()   
         });
     }
 
