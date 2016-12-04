@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 app.controller('mainController', function($scope, $http) {
 
     $scope.userName = "Sherry Chou";
-
+    getRecords()
     $('.tabular.menu .item').tab({history:false});
 
 
