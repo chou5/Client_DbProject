@@ -306,4 +306,21 @@ app.controller('mainController', function($scope, $http) {
         });
     }
 
+    function getRecords(){
+        sendData = {
+            'description': 'Get table records when user loads query browser page'
+        }
+
+        $http({
+            method: "POST",
+            url: getIP() + "/getRecords",
+            data: sendData
+        }).then(function successCallback(response){
+            console.log("Http Request / getRecords - output : ");
+            var result = response.data;
+            console.log(result);
+            $scope.getRecords = result;
+        });
+    }
+
 });
