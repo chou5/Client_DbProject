@@ -80,14 +80,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr ng-repeat="row in getRecords.records">
+                                        <tr ng-repeat="row in getRecords.tables">
                                             <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.table_name)">{{row.table_name}}</a></td>
                                             <td>{{row.record_num}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div class="ui divider hidden"></div>
+                                <table class="ui basic table" ng-if="getRecords.views">
+                                    <thead>
+                                        <tr>
+                                            <th>View Name</th>
+                                            <th>Records</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in getRecords.views">
+                                            <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.table_name)">{{row.view_name}}</td>
+                                            <td>{{row.record_num}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
+                        </div>         
                     </div>
                 </div>
                 <div class="ui divider"></div>
