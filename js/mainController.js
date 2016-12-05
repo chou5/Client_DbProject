@@ -85,6 +85,7 @@ app.controller('mainController', function($scope, $http) {
     }
 
     $scope.sendCusForm = function(){
+        $scope.cus_address = null;
         sendData = {
             'cus_name': $scope.cus_name,
             'cus_contact_person': $scope.cus_contactPerson,
@@ -103,11 +104,11 @@ app.controller('mainController', function($scope, $http) {
             url: getIP() + "/sendCusForm",
             data: sendData
         }).then(function(response){
-            console.log("Http Request / sendForm - output :");
+            console.log("Http Request / sendCusForm - output :");
             var result = response.data;
             console.log(result);
 
-            $scope.requestResult = result;
+            $scope.cusForm = result;
         });
 
     }
@@ -115,32 +116,152 @@ app.controller('mainController', function($scope, $http) {
 
     $scope.sendEmpForm = function(){
         sendData = {
-            'cus_name': $scope.cus_name,
-            'cus_contact_person': $scope.cus_contactPerson,
-            'cus_email': $scope.cus_email,
-            'cus_phone': $scope.cus_phone,
-            'cus_address': $scope.cus_address,
-            'cus_region': $scope.cus_region,
-            'cus_empId': $scope.cus_empId
+            'emp_fname': $scope.emp_fname,
+            'emp_lname': $scope.emp_lname,
+            'emp_gender': $scope.emp_gender,
+            'emp_dob': $scope.emp_dob,
+            'emp_phone': $scope.emp_phone,
+            'emp_email': $scope.emp_email,
+            'emp_title': $scope.emp_title,
+            'emp_region': $scope.emp_region,
+            'emp_startDate': $scope.emp_startDate,
+            'emp_department': $scope.emp_department
         }
 
-        console.log("Httpe Request /sendCusForm - input : ")
+        console.log("Httpe Request /sendEmpForm - input : ")
         console.log(sendData);
 
         $http({
             method: "POST",
-            url: getIP() + "/sendCusForm",
+            url: getIP() + "/sendEmpForm",
             data: sendData
         }).then(function(response){
-            console.log("Http Request / sendForm - output :");
+            console.log("Http Request / sendEmpForm - output :");
             var result = response.data;
             console.log(result);
 
-            $scope.requestResult = result;
+            $scope.empForm = result;
         });
 
     }
 
+    $scope.sendPubForm = function(){
+        $scope.pub_address=null;
+        sendData = {
+            'pub_name': $scope.pub_name,
+            'pub_empId': $scope.pub_empId,
+            'pub_address': $scope.pub_address,
+            'pub_country': $scope.pub_country,
+            'pub_contact_person': $scope.pub_contact_person,
+            'pub_email': $scope.pub_email,
+            'pub_phone': $scope.pub_phone
+        }
+
+        console.log("Httpe Request /sendPubForm - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/sendPubForm",
+            data: sendData
+        }).then(function(response){
+            console.log("Http Request / sendPubForm - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.pubForm = result;
+        });
+
+    }
+
+
+    $scope.sendProdForm = function(){
+        sendData = {
+            'prod_name': $scope.prod_name,
+            'prod_pubId': $scope.prod_pubId,
+            'prod_subModel': $scope.prod_subModel,
+            'prod_type': $scope.prod_type,
+            'prod_priceUSD': $scope.prod_priceUSD,
+            'prod_priceNTD': $scope.prod_priceNTD
+        }
+
+        console.log("Httpe Request /sendProdForm - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/sendProdForm",
+            data: sendData
+        }).then(function(response){
+            console.log("Http Request / sendProdForm - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.prodForm = result;
+        });
+
+    }
+
+
+$scope.sendOrdForm = function(){
+        $scope.ord_note=null;
+        sendData = {
+            'ord_prodId': $scope.ord_prodId,
+            'ord_invId': $scope.ord_invId,
+            'ord_orderDate': $scope.ord_orderDate,
+            'ord_note': $scope.ord_note,
+            'ord_amount': $scope.ord_amount,
+            'ord_priceNTD': $scope.ord_priceNTD,
+            'ord_subStartDate': $scope.ord_subStartDate,
+            'ord_subEndDate': $scope.ord_subEndDate
+        }
+
+        console.log("Httpe Request /sendOrdForm - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/sendOrdForm",
+            data: sendData
+        }).then(function(response){
+            console.log("Http Request / sendOrdForm - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.ordForm = result;
+        });
+
+    }
+
+    $scope.sendInvForm = function(){
+        $scope.inv_note = null;
+        sendData = {
+            'inv_number': $scope.inv_number,
+            'inv_cusId': $scope.inv_cusId,
+            'inv_issuedDate': $scope.inv_issuedDate,
+            'inv_quarter': $scope.inv_quarter,
+            'inv_paymentDate': $scope.inv_paymentDate,
+            'inv_note': $scope.inv_note,
+            'inv_amountUSD': $scope.inv_amountUSD,
+            'inv_amountNTD': $scope.inv_amountNTD
+        }
+
+        console.log("Httpe Request /sendInvForm - input : ")
+        console.log(sendData);
+
+        $http({
+            method: "POST",
+            url: getIP() + "/sendInvForm",
+            data: sendData
+        }).then(function(response){
+            console.log("Http Request / sendInvForm - output :");
+            var result = response.data;
+            console.log(result);
+
+            $scope.invForm = result;
+        });
+
+    }
 
     $scope.runSQL = function(){
         sendData = {

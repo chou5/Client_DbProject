@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>New</title>
+    <title>New Data</title>
     <script type="text/javascript" src="dist/angular.js"></script>
     <script type="text/javascript" src="js/global.js"></script>
     <script type="text/javascript" src="js/mainController.js"></script>
@@ -22,6 +22,9 @@
                     </a>
                     <a href="environment.html" class="item">
                         Database Environment
+                    </a>
+                    <a href="demo.html" class="item">
+                    Demo
                     </a>
                     <a class="active item">
                         New Data
@@ -46,57 +49,16 @@
                 <div class="ui divider"></div>
                 <div class="container">
                     <div class="ui top attached tabular menu">
-                        <a class="item" data-tab="Example">Example</a>
-                        <a class="active item" data-tab="Example2">Example2</a>
-                        <a class="item" data-tab="Customer">Customer</a>
+                        <a class="active item" data-tab="Customer">Customer</a>
                         <a class="item" data-tab="Employee">Employee</a>
                         <a class="item" data-tab="Publisher">Publisher</a>
                         <a class="item" data-tab="Product">Product</a>
                         <a class="item" data-tab="Order">Order</a>
                         <a class="item" data-tab="Invoice">Invoice</a>
                     </div>
-                    <div class="ui bottom attached tab segment" data-tab="Example">
+                    <div class="ui bottom attached tab segment active" data-tab="Customer">
                         <div class="ui very relaxed segment">
-                            <p>Hi, {{userName}}. Please click the following button to send request to server.</p>
-                            <div ng-if="requestResult" class="ui tertiary teal inverted segment">
-                                <h4 class="ui header">Request response:</h4>
-                                <div class="ui basic tertiary teal inverted segment">
-                                    <p><span ng-repeat="str in requestResult.firstStrList">{{str}}&nbsp;</span></p>
-                                    <p><span ng-repeat="str in requestResult.secondStrList">{{str}}&nbsp;</span></p>
-                                    <p><span ng-repeat="str in requestResult.thirdStrList">{{str}}&nbsp;</span></p>
-                                </div>
-                            </div>
-                            <button class="ui blue button" ng-click="getResponse()">
-                                <i class="External user"></i> Get Response
-                            </button>
-                            <button class="ui blue button" ng-click="queryDB()">
-                                <i class="External user"></i> Query DB
-                            </button>
-                        </div>
-                    </div>
-                    <div class="ui bottom attached tab segment active" data-tab="Example2">
-                        <div class="ui very relaxed segment">
-                            <h5 class="ui dividing header">This is an example for using ng-model</h5>
-                            <form class="ui form" ng-class="{success:requestResult}">
-                                <div class="field">
-                                    <label>First Name</label>
-                                    <input type="text" name="first-name" ng-model="first_name" placeholder="First Name" required>
-                                </div>
-                                <div class="field">
-                                    <label>Last Name</label>
-                                    <input type="text" name="last-name" ng-model="last_name" placeholder="Last Name" required>
-                                </div>
-                                <div class="ui success message">
-                                    <div class="header">Form Completed</div>
-                                    <p>{{requestResult.message}}</p>
-                                </div>
-                                <button ng-click="sendForm()" class="ui button">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="ui bottom attached tab segment" data-tab="Customer">
-                        <div class="ui very relaxed segment">
-                            <form class="ui form" ng-class="{success:requestResult}">
+                            <form class="ui form" ng-class="{success:cusForm}">
                                 <h3 class="ui dividing header">Customer Information</h3>
                                 <div class="two fields">
                                     <div class="field">
@@ -120,7 +82,7 @@
                                 </div>
                                 <div class="field">
                                     <label>Address</label>
-                                    <input type="text" name="cus_address" ng-model="cus_address" placeholder="Address" required>
+                                    <input type="text" name="cus_address" ng-model="cus_address" placeholder="Address">
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
@@ -134,7 +96,7 @@
                                 </div>
                                 <div class="ui success message">
                                     <div class="header">Form Completed</div>
-                                    <p>{{requestResult.message}}</p>
+                                    <p>{{cusForm.message}}</p>
                                 </div>
                                 <button ng-click="sendCusForm()" class="ui button">Submit</button>
                             </form>
@@ -142,7 +104,7 @@
                     </div>
                     <div class="ui bottom attached tab segment" data-tab="Employee">
                         <div class="ui very relaxed segment">
-                            <form class="ui form">
+                            <form class="ui form" ng-class="{success:empForm}">
                                 <h3 class="ui dividing header">Employee Information</h3>
                                 <label>Name</label>
                                 <div class="two fields">
@@ -156,69 +118,73 @@
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Gender</label>
-                                        <select class="ui fluid dropdown" required>
+                                        <select class="ui fluid dropdown" name="emp_gender" ng-model="emp_gender" required>
                                             <option value="">Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
                                         </select>
                                     </div>
                                     <div class="field">
                                         <label>Date Of Birth</label>
-                                        <input type="text" name="emp_dob" placeholder="yyyy/mm/dd" required>
+                                        <input type="text" name="emp_dob" ng-model="emp_dob" placeholder="yyyy-mm-dd" required>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Phone Number</label>
-                                        <input type="text" name="emp_phone" placeholder="Phone Number" required>
+                                        <input type="text" name="emp_phone" ng-model="emp_phone" placeholder="Phone Number" required>
                                     </div>
                                     <div class="field">
                                         <label>Email Address</label>
-                                        <input type="text" name="emp_email" placeholder="Email Address" required>
+                                        <input type="text" name="emp_email" ng-model="emp_email" placeholder="Email Address" required>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Title</label>
-                                        <input type="text" name="emp_title" placeholder="Title" required>
+                                        <input type="text" name="emp_title" ng-model="emp_title" placeholder="Title" required>
                                     </div>
                                     <div class="field">
                                         <label>Department</label>
-                                        <select class="ui fluid dropdown" required>
+                                        <select class="ui fluid dropdown" name="emp_department" ng-model="emp_department" required>
                                             <option value="">Department</option>
-                                            <option value="sales">Sales</option>
-                                            <option value="product">Product</option>
-                                            <option value="financial">Financial</option>
-                                            <option value="human_resources">Human Resources</option>
-                                            <option value="management">Management</option>
-                                            <option value="marketing">Marketing</option>
+                                            <option value="Sales">Sales</option>
+                                            <option value="Product">Product</option>
+                                            <option value="Financial">Financial</option>
+                                            <option value="Human Resources">Human Resources</option>
+                                            <option value="Management">Management</option>
+                                            <option value="Marketing">Marketing</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Region</label>
-                                        <select class="ui fluid dropdown" required>
+                                        <select class="ui fluid dropdown" name="emp_region" ng-model="emp_region" required>
                                             <option value="">Region</option>
-                                            <option value="south">South</option>
-                                            <option value="north">North</option>
-                                            <option value="center">Center</option>
-                                            <option value="east">East</option>
-                                            <option value="foreign">Foreign</option>
+                                            <option value="South">South</option>
+                                            <option value="North">North</option>
+                                            <option value="Center">Center</option>
+                                            <option value="East">East</option>
+                                            <option value="Foreign">Foreign</option>
                                         </select>
                                     </div>
                                     <div class="field">
                                         <label>Start Date</label>
-                                        <input type="text" name="emp_startDate" placeholder="yyyy/mm/dd" required>
+                                        <input type="text" name="emp_startDate" ng-model="emp_startDate" placeholder="yyyy-mm-dd" required>
                                     </div>
                                 </div>
-                                <button class="ui button" type="submit">Submit</button>
+                                <div class="ui success message">
+                                    <div class="header">Form Completed</div>
+                                    <p>{{empForm.message}}</p>
+                                </div>
+                                <button ng-click="sendEmpForm()" class="ui button">Submit</button>
                             </form>
                         </div>
                     </div>
                     <div class="ui bottom attached tab segment" data-tab="Publisher">
                         <div class="ui very relaxed segment">
-                            <form class="ui form">
+                            <form class="ui form" ng-class="{success:pubForm}">
                                 <h3 class="ui dividing header">Publisher Information</h3>
                                 <div class="two fields">
                                     <div class="field">
@@ -226,11 +192,25 @@
                                         <input type="text" name="pub_name" ng-model="pub_name" placeholder="Name" required>
                                     </div>
                                     <div class="field">
-                                        <label>Contact Person</label>
-                                        <input type="text" name="pub_contactPerson" ng-model="pub_contactPerson" placeholder="Contact Person" required>
+                                        <label>Product Specialist ID Number</label>
+                                        <input type="text" name="pub_empId" ng-model="pub_empId" placeholder="Product Specialist ID Number" required>
                                     </div>
                                 </div>
-                                <div class="two fields">
+                                <div class="fields">
+                                    <div class="twelve wide field">
+                                        <label>Address</label>
+                                        <input type="text" name="pub_address" ng-model="pub_address" placeholder="Address">
+                                    </div>
+                                    <div class="four wide field">
+                                        <label>Country</label>
+                                        <input type="text" name="pub_country" ng-model="pub_country" placeholder="Country" required>
+                                    </div>
+                                </div>
+                                <div class="three fields">
+                                    <div class="field">
+                                        <label>Contact Person</label>
+                                        <input type="text" name="pub_contact_person" ng-model="pub_contact_person" placeholder="Contact Person" required>
+                                    </div>
                                     <div class="field">
                                         <label>Email</label>
                                         <input type="text" name="pub_email" ng-model="pub_email" placeholder="Email" required>
@@ -240,160 +220,168 @@
                                         <input type="text" name="pub_phone" ng-model="pub_phone" placeholder="Phone Number" required>
                                     </div>
                                 </div>
-                                <div class="fields">
-                                    <div class="twelve wide field">
-                                        <label>Address</label>
-                                        <input type="text" name="pub_address" placeholder="Address" required>
-                                    </div>
-                                    <div class="four wide field">
-                                        <label>Country</label>
-                                        <input type="text" name="pub_country" placeholder="Country" required>
-                                    </div>
+                                <div class="ui success message">
+                                    <div class="header">Form Completed</div>
+                                    <p>{{pubForm.message}}</p>
                                 </div>
-                                <button class="ui button" type="submit">Submit</button>
+                                <button ng-click="sendPubForm()" class="ui button">Submit</button>
                             </form>
                         </div>
                     </div>
                     <div class="ui bottom attached tab segment" data-tab="Product">
                         <div class="ui very relaxed segment">
-                            <form class="ui form">
+                            <form class="ui form" ng-class="{success:prodForm}">
                                 <h3 class="ui dividing header">Product Information</h3>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Name</label>
-                                        <input type="text" name="prod_name" placeholder="Name" required>
+                                        <input type="text" name="prod_name" ng-model="prod_name" placeholder="Name" required>
                                     </div>
                                     <div class="field">
-                                        <label>Subscription Model</label>
-                                        <select class="ui fluid dropdown" required>
-                                            <option value="">Subscription Model</option>
-                                            <option value="yearly_subscription">Yearly Subscription</option>
-                                            <option value="monthly_subscription">Monthly Subscription</option>
-                                            <option value="weekly_subscription">Weekly Subscription</option>
-                                            <option value="one-time_purchase">One-time Purchase</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="three fields">
-                                    <div class="field">
-                                        <label>Type</label>
-                                        <select class="ui fluid dropdown" required>
-                                            <option value="">Type</option>
-                                            <option value="database">Database</option>
-                                            <option value="e-book">E-Book</option>
-                                            <option value="e-journal">E-Journal</option>
-                                        </select>
-                                    </div>
-                                    <div class="field">
-                                        <label>Price in USD</label>
-                                        <input type="text" name="prod_priceUSD" placeholder="USD" required>
-                                    </div>
-                                    <div class="field">
-                                        <label>Price in NTD</label>
-                                        <input type="text" name="prod_priceNTD" placeholder="NTD" required>
+                                        <label>Publisher ID Number</label>
+                                        <input type="text" name="prod_pubId" ng-model="prod_pubId" placeholder="Publisher ID Number" required>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
-                                        <label>Publisher ID Number</label>
-                                        <input type="text" name="prod_pubId" placeholder="Publisher ID Number" required>
+                                        <label>Subscription Model</label>
+                                        <select class="ui fluid dropdown" name="prod_subModel" ng-model="prod_subModel" required>
+                                            <option value="">Subscription Model</option>
+                                            <option value="Yearly Subscription">Yearly Subscription</option>
+                                            <option value="Monthly Subscription">Monthly Subscription</option>
+                                            <option value="Weekly Subscription">Weekly Subscription</option>
+                                            <option value="One-time Purchase">One-time Purchase</option>
+                                        </select>
                                     </div>
                                     <div class="field">
-                                        <label>Product Manager ID Number</label>
-                                        <input type="text" name="pub_empId" placeholder="Product Manager ID Number" required>
+                                        <label>Type</label>
+                                        <select class="ui fluid dropdown" name="prod_type" ng-model="prod_type" required>
+                                            <option value="">Type</option>
+                                            <option value="Database">Database</option>
+                                            <option value="E-Book">E-Book</option>
+                                            <option value="E-Journal">E-Journal</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <button class="ui button" type="submit">Submit</button>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Price in USD</label>
+                                        <input type="text" name="prod_priceUSD" ng-model="prod_priceUSD" placeholder="USD" required>
+                                    </div>
+                                    <div class="field">
+                                        <label>Price in NTD</label>
+                                        <input type="text" name="prod_priceNTD" ng-model="prod_priceNTD" placeholder="NTD" required>
+                                    </div>
+                                </div>
+                                <div class="ui success message">
+                                    <div class="header">Form Completed</div>
+                                    <p>{{prodForm.message}}</p>
+                                </div>
+                                <button ng-click="sendProdForm()" class="ui button">Submit</button>
                             </form>
                         </div>
                     </div>
                     <div class="ui bottom attached tab segment" data-tab="Order">
                         <div class="ui very relaxed segment">
-                            <form class="ui form">
+                            <form class="ui form" ng-class="{success:ordForm}">
                                 <h3 class="ui dividing header">Order Information</h3>
-                                <div class="three fields">
+                                <div class="two fields">
                                     <div class="field">
-                                        <label>Order Date</label>
-                                        <input type="text" name="ord_orderDate" placeholder="yyyy/mm/dd" required>
+                                        <label>Product ID Number</label>
+                                        <input type="text" name="ord_prodId" ng-model="ord_prodId" placeholder="Product ID Number" required>
                                     </div>
                                     <div class="field">
-                                        <label>Price</label>
-                                        <input type="text" name="ord_price" placeholder="USD" required>
-                                    </div>
-                                    <div class="field">
-                                        <label>Quantity</label>
-                                        <input type="text" name="ord_quantity" placeholder="Quantity" required>
+                                        <label>Invoice ID Number</label>
+                                        <input type="text" name="ord_invId" ng-model="ord_invId" placeholder="Invoice ID Number" required>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
-                                        <label>Product ID Number</label>
-                                        <input type="text" name="ord_prodId" placeholder="Product ID Number" required>
+                                        <label>Order Date</label>
+                                        <input type="text" name="ord_orderDate" ng-model="ord_orderDate" placeholder="yyyy-mm-dd" required>
                                     </div>
                                     <div class="field">
-                                        <label>Invoice ID Number</label>
-                                        <input type="text" name="ord_invId" placeholder="Invoice ID Number" required>
+                                        <label>Note</label>
+                                        <input type="text" name="ord_note" ng-model="ord_note" placeholder="Note">
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Amount</label>
+                                        <input type="text" name="ord_amount" ng-model="ord_amount" placeholder="Amount" required>
+                                    </div>
+                                    <div class="field">
+                                        <label>Price in NTD</label>
+                                        <input type="text" name="ord_priceNTD" ng-model="ord_priceNTD" placeholder="NTD" required>
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Subscription Start Date</label>
-                                        <input type="text" name="ord_subStartDate" placeholder="yyyy/mm/dd" required>
+                                        <input type="text" name="ord_subStartDate" ng-model="ord_subStartDate" placeholder="yyyy-mm-dd" required>
                                     </div>
                                     <div class="field">
                                         <label>Subscription End Date</label>
-                                        <input type="text" name="ord_subEndDate" placeholder="yyyy/mm/dd" required>
+                                        <input type="text" name="ord_subEndDate" ng-model="ord_subEndDate" placeholder="yyyy-mm-dd" required>
                                     </div>
                                 </div>
-                                <button class="ui button" type="submit">Submit</button>
+                                <div class="ui success message">
+                                    <div class="header">Form Completed</div>
+                                    <p>{{ordForm.message}}</p>
+                                </div>
+                                <button ng-click="sendOrdForm()" class="ui button">Submit</button>
                             </form>
                         </div>
                     </div>
                     <div class="ui bottom attached tab segment" data-tab="Invoice">
                         <div class="ui very relaxed segment">
-                            <form class="ui form">
+                            <form class="ui form" ng-class="{success:invForm}">
                                 <h3 class="ui dividing header">Invoice Information</h3>
-                                <div class="three fields">
+                                <div class="two fields">
                                     <div class="field">
-                                        <label>Issued Date</label>
-                                        <input type="text" name="inv_issuedDate" placeholder="yyyy/mm/dd" required>
+                                        <label>Invoice number</label>
+                                        <input type="text" name="inv_number" ng-model="inv_number" placeholder="Invoice Number" required>
                                     </div>
                                     <div class="field">
-                                        <label>Payment Date</label>
-                                        <input type="text" name="inv_paymentDate" placeholder="yyyy/mm/dd" required>
+                                        <label>Customer ID Number</label>
+                                        <input type="text" name="inv_cusId" ng-model="inv_cusId" placeholder="Customer ID Number" required>
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Issued Date</label>
+                                        <input type="text" name="inv_issuedDate" ng-model="inv_issuedDate" placeholder="yyyy-mm-dd" required>
                                     </div>
                                     <div class="field">
                                         <label>Quarter</label>
-                                        <select class="ui fluid dropdown" required>
-                                            <option value="">Quarter</option>
-                                            <option value="q1">Q1</option>
-                                            <option value="q2">Q2</option>
-                                            <option value="q3">Q3</option>
-                                            <option value="q4">Q4</option>
-                                        </select>
+                                        <input type="text" name="inv_quarter" ng-model="inv_quarter" placeholder="yyyy-Qx" required>
+                                    </div>
+                                </div>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <label>Payment Date</label>
+                                        <input type="text" name="inv_paymentDate" ng-model="inv_paymentDate" placeholder="yyyy-mm-dd" required>
+                                    </div>
+                                    <div class="field">
+                                        <label>Note</label>
+                                        <input type="text" name="inv_note" ng-model="inv_note" placeholder="Note">
                                     </div>
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
                                         <label>Amount in USD</label>
-                                        <input type="text" name="inv_amountUSD" placeholder="USD" required>
+                                        <input type="text" name="inv_amountUSD" ng-model="inv_amountUSD" placeholder="USD" required>
                                     </div>
                                     <div class="field">
                                         <label>Amount in NTD</label>
-                                        <input type="text" name="inv_amountNTD" placeholder="NTD" required>
+                                        <input type="text" name="inv_amountNTD" ng-model="inv_amountNTD" placeholder="NTD" required>
                                     </div>
                                 </div>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <label>Customer ID Number</label>
-                                        <input type="text" name="inv_cusId" placeholder="Customer ID Number" required>
-                                    </div>
-                                    <div class="field">
-                                        <label>Annotation</label>
-                                        <input type="text" name="inv_annotation" placeholder="Annotation">
-                                    </div>
+                                <div class="ui success message">
+                                    <div class="header">Form Completed</div>
+                                    <p>{{invForm.message}}</p>
                                 </div>
-                                <button class="ui button" type="submit">Submit</button>
+                                <button ng-click="sendInvForm()" class="ui button">Submit</button>
                             </form>
                         </div>
                     </div>
