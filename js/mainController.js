@@ -284,149 +284,32 @@ $scope.sendOrdForm = function(){
         });
     }
 
-    $scope.selectCus = function(){
 
-        $scope.sqlite_text = 'SELECT * FROM Customer;'
-        sendData = {
-            'description': 'User click the selectCus link',
-            'sqlite_text': $scope.sqlite_text
-        }
+    $scope.selectTableName = function(table_name){
 
-        console.log("Http Request /selectCus - input :");
-        console.log(sendData);
-
-
-        $http({
-            method: "POST",
-            url: getIP() + "/selectCus",
-            data: sendData
-        }).then(function successCallback(response){
-            console.log("Http Request / selectCus - output :");
-            var result = response.data;
-            console.log(result);
-            $scope.requestResult = result;      
-        });
-    }
-
-    $scope.selectEmp = function(){
-
-        $scope.sqlite_text = 'SELECT * FROM Employee;'
-        sendData = {
-            'description': 'User click the selectEmp link',
-            'sqlite_text': $scope.sqlite_text
-        }
-
-        console.log("Http Request /selectEmp - input :");
-        console.log(sendData);
-
-
-        $http({
-            method: "POST",
-            url: getIP() + "/selectEmp",
-            data: sendData
-        }).then(function successCallback(response){
-            console.log("Http Request / selectEmp - output :");
-            var result = response.data;
-            console.log(result);
-            $scope.requestResult = result;      
-        });
-    }
-
-    $scope.selectPub = function(){
-
-        $scope.sqlite_text = 'SELECT * FROM Publisher;'
-        sendData = {
-            'description': 'User click the selectPub link',
-            'sqlite_text': $scope.sqlite_text
-        }
-
-        console.log("Http Request /selectPub - input :");
-        console.log(sendData);
-
-
-        $http({
-            method: "POST",
-            url: getIP() + "/selectPub",
-            data: sendData
-        }).then(function successCallback(response){
-            console.log("Http Request / selectPub - output :");
-            var result = response.data;
-            console.log(result);
-            $scope.requestResult = result;      
-        });
-    }
-
-    $scope.selectProd = function(){
-
-        $scope.sqlite_text = 'SELECT * FROM Product;'
-        sendData = {
-            'description': 'User click the selectProd link',
-            'sqlite_text': $scope.sqlite_text
-        }
-
-        console.log("Http Request /selectProd - input :");
-        console.log(sendData);
-
-
-        $http({
-            method: "POST",
-            url: getIP() + "/selectProd",
-            data: sendData
-        }).then(function successCallback(response){
-            console.log("Http Request / selectProd - output :");
-            var result = response.data;
-            console.log(result);
-            $scope.requestResult = result;      
-        });
-    }
-
-    $scope.selectOrd = function(){
-
-        $scope.sqlite_text = 'SELECT * FROM Orders;'
-        sendData = {
-            'description': 'User click the selectOrd link',
-            'sqlite_text': $scope.sqlite_text
-        }
-
-        console.log("Http Request /selectOrd - input :");
-        console.log(sendData);
-
-
-        $http({
-            method: "POST",
-            url: getIP() + "/selectOrd",
-            data: sendData
-        }).then(function successCallback(response){
-            console.log("Http Request / selectOrd - output :");
-            var result = response.data;
-            console.log(result);
-            $scope.requestResult = result;      
-        });
-    }
-
-    $scope.selectInv = function(){
-
-        $scope.sqlite_text = 'SELECT * FROM Invoice;'
+        var string = 'SELECT * FROM ' + table_name + ';'
+        $scope.sqlite_text = string
         sendData = {
             'description': 'User click the selectInv link',
             'sqlite_text': $scope.sqlite_text
         }
 
-        console.log("Http Request /selectInv - input :");
+        console.log("Http Request /selectTableName - input :");
         console.log(sendData);
 
 
         $http({
             method: "POST",
-            url: getIP() + "/selectInv",
+            url: getIP() + "/selectTableName",
             data: sendData
         }).then(function successCallback(response){
-            console.log("Http Request / selectInv - output :");
+            console.log("Http Request / selectTableName - output :");
             var result = response.data;
             console.log(result);
             $scope.requestResult = result;      
         });
     }
+
 
     function getRecords(){
         sendData = {

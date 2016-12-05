@@ -80,29 +80,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectCus" name="selectCus" ng-click="selectCus()">Customer</a></td>
-                                            <td>{{getRecords.cus}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectEmp" name="selectEmp" ng-click="selectEmp()">Employee</a></td>
-                                            <td>{{getRecords.emp}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectPub" name="selectPub" ng-click="selectPub()">Publisher</a></td>
-                                            <td>{{getRecords.pub}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectProd" name="selectProd" ng-click="selectProd()">Product</a></td>
-                                            <td>{{getRecords.prod}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectOrd" name="selectOrd" ng-click="selectOrd()">Orders</a></td>
-                                            <td>{{getRecords.ord}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><a href target="_blank" id="selectInv" name="selectInv" ng-click="selectInv()">Invoice</a></td>
-                                            <td>{{getRecords.inv}}</td>
+                                        <tr ng-repeat="row in getRecords.records">
+                                            <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.table_name)">{{row.table_name}}</a></td>
+                                            <td>{{row.record_num}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
