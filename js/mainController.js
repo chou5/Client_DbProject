@@ -7,6 +7,11 @@ app.controller('mainController', function($scope, $http) {
     $('.tabular.menu .item').tab({history:false});
     $('.copy_link_btn').popup();
 
+    $scope.copy_to_clipbpard = function(obj){
+        console.log("Pass the html element to controller.");
+        console.log(obj.target.attributes[4].value);
+    }
+
 
     $scope.getResponse = function() {
 
