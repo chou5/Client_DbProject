@@ -310,6 +310,17 @@ $scope.sendOrdForm = function(){
         });
     }
 
+    $scope.isVisible = false;
+    $scope.showCode = function(){
+        sendData = {
+            'description': 'User click the showCode button',
+        }
+        console.log("Http Request /showCode - input :");
+        console.log(sendData);
+
+        $scope.isVisible = $scope.isVisible ? false : true;
+    }
+
 
     function getRecords(){
         sendData = {

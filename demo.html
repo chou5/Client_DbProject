@@ -49,11 +49,29 @@
                 <div class="ui divider"></div>
                 <div class="ui basic segment">
                     <ol class="ui big list">
-                        <li value="*"><b>Subquery</b>
-                            <ol>
-                                <li value="-">List all customers who paid more than the average payment of all the customers in database order by inv_id.</li>
-                            </ol>
-                        </li>
+                        <div class="subquery example">
+                            <li value="*">
+                                <div style="text-align:left;"><b>Subquery</b>
+                                    <span style="float: right;">
+                                    <button class="ui icon button"><i class="code icon" ng-click="showCode()"></i>
+                                    </button>
+                                    </span>
+                                </div>
+                                <ol>
+                                    <li value="-">List all customers who paid more than the average payment of all the customers in database order by inv_id.</li>
+                                </ol>
+                                <div class="ui existing segment" id="code_area" ng-show="isVisible">
+                                    <pre>
+                                    <code class="query1">
+                                        SELECT * FROM Invoice WHERE AmountUSD
+                                        >(SELECT AVG(AmountUSD) FROM Invoice)
+                                        ORDER BY inv_id;
+                                    </code>
+                                </pre>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="ui divider hidden"></div>
                         <li value="*"><b>Join table queries</b>
                             <ol>
                                 <li value="-">Retrieve info about a customer named JSTOR, including the name and payment date.</li>
