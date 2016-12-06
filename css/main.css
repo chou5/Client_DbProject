@@ -52,6 +52,9 @@ h3>img.header_icon{
 	padding: 0em 0em;
 }
 
-
+span>i.code.icon:hover{
+	font-weight: bold;
+	cursor: pointer;
+}
 
 

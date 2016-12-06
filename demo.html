@@ -51,14 +51,13 @@
                     <ol class="ui big list">
                         <div class="subquery example">
                             <li value="*">
-                                <div style="text-align:left;"><b>Subquery</b>
-                                    <span style="float: right;">
-                                    <button class="ui icon button"><i class="code icon" ng-click="showCode()"></i>
-                                    </button>
-                                    </span>
-                                </div>
+                                <b>Subquery</b>
                                 <ol>
-                                    <li value="-">List all customers who paid more than the average payment of all the customers in database order by inv_id.</li>
+                                    <li value="-">
+                                        <div style="text-align:left;">List all customers who paid more than the average payment of all the customers in database order by inv_id.
+                                            <span style="float: right;"><i class="code icon" ng-click="showCode()"></i></span>
+                                        </div>
+                                    </li>
                                 </ol>
                                 <div class="ui existing segment" id="code_area" ng-show="isVisible">
                                     <pre>
@@ -80,7 +79,8 @@
                         </li>
                         <li value="*"><b>Group by query</b>
                             <ol>
-                                <li value="-">Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. Also order first by contact person then by customer name.</li>
+                                <li value="-"><p>Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. </p>
+                                <p>Also order first by contact person then by customer name.</p></li>
                             </ol>
                         </li>
                         <li value="*"><b>Other query</b>
