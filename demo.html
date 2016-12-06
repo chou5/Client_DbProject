@@ -47,29 +47,31 @@
                 </h1>
                 </div>
                 <div class="ui divider"></div>
-                <ol class="ui big list">
-                    <li value="*"><b>Subquery</b>
-                        <ol>
-                            <li value="-">List all customers who paid more than the average payment of all the customers in database order by inv_id.</li>
-                        </ol>
-                    </li>
-                    <li value="*"><b>Join table queries</b>
-                        <ol>
-                            <li value="-">Retrieve info about a customer named JSTOR, including the name and payment date.</li>
-                            <li value="-">Retrive info about each customer, including cus_id, payment_ date, amountUSD and order by their cus_id.</li>
-                        </ol>
-                    </li>
-                    <li value="*"><b>Group by query</b>
-                        <ol>
-                            <li value="-">Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. Also order first by contact person then by customer name.</li>
-                        </ol>
-                    </li>
-                    <li value="*"><b>Other query</b>
-                        <ol>
-                            <li value="-">Create a view called Payment that includes cus_id and the amountUSD renames as paymentamount for all the customers that have a paymentUSD greater than $9000.</li>
-                        </ol>
-                    </li>
-                </ol>
+                <div class="ui basic segment">
+                    <ol class="ui big list">
+                        <li value="*"><b>Subquery</b>
+                            <ol>
+                                <li value="-">List all customers who paid more than the average payment of all the customers in database order by inv_id.</li>
+                            </ol>
+                        </li>
+                        <li value="*"><b>Join table queries</b>
+                            <ol>
+                                <li value="-">Retrieve info about a customer named JSTOR, including the name and payment date.</li>
+                                <li value="-">Retrive info about each customer, including cus_id, payment_ date, amountUSD and order by their cus_id.</li>
+                            </ol>
+                        </li>
+                        <li value="*"><b>Group by query</b>
+                            <ol>
+                                <li value="-">Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. Also order first by contact person then by customer name.</li>
+                            </ol>
+                        </li>
+                        <li value="*"><b>Other query</b>
+                            <ol>
+                                <li value="-">Create a view called Payment that includes cus_id and the amountUSD renames as paymentamount for all the customers that have a paymentUSD greater than $9000.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
