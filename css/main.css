@@ -48,13 +48,15 @@ h3>img.header_icon{
 	margin-top: -1% !important;
 }
 
-#code_area{
-	padding: 0em 0em;
-}
-
 span>i.code.icon:hover{
 	font-weight: bold;
 	cursor: pointer;
 }
 
+.code.trigger.btn{
+	float:right;
+}
 
+i.copy_link_btn.copy.link.icon{
+	float:right;
+}

@@ -54,20 +54,29 @@
                                 <b>Subquery</b>
                                 <ol>
                                     <li value="-">
-                                        <div style="text-align:left;">List all customers who paid more than the average payment of all the customers in database order by inv_id.
-                                            <span style="float: right;"><i class="code icon" ng-click="showCode()"></i></span>
+                                        <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                        <div>List all customers who paid more than the average payment of all the customers in database order by inv_id. List all customers who paid more than the average payment of all the customers in database order by inv_id.
                                         </div>
                                     </li>
+                                    <div ng-show="isVisible">
+                                        <div class="ui hidden divider"></div>
+                                        <div class="ui basic segment">
+                                        <div class="ui existing segment" id="code_area">
+                                            <dev class="ui top attached label">
+                                                SQL Statement
+                                                <i data-content="Copy code" data-variation="inverted" class="copy_link_btn copy link icon"></i>
+                                            </dev>
+                                            <pre>
+                                            <code class="query1">
+SELECT * FROM Invoice WHERE AmountUSD<br/>
+>(SELECT AVG(AmountUSD) FROM Invoice)<br/>
+ORDER BY inv_id;
+                                            </code>
+                                            </pre>
+                                        </div>
+                                        </div>
+                                    </div>
                                 </ol>
-                                <div class="ui existing segment" id="code_area" ng-show="isVisible">
-                                    <pre>
-                                    <code class="query1">
-                                        SELECT * FROM Invoice WHERE AmountUSD
-                                        >(SELECT AVG(AmountUSD) FROM Invoice)
-                                        ORDER BY inv_id;
-                                    </code>
-                                </pre>
-                                </div>
                             </li>
                         </div>
                         <div class="ui divider hidden"></div>
@@ -79,8 +88,10 @@
                         </li>
                         <li value="*"><b>Group by query</b>
                             <ol>
-                                <li value="-"><p>Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. </p>
-                                <p>Also order first by contact person then by customer name.</p></li>
+                                <li value="-">
+                                    <p>Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. </p>
+                                    <p>Also order first by contact person then by customer name.</p>
+                                </li>
                             </ol>
                         </li>
                         <li value="*"><b>Other query</b>

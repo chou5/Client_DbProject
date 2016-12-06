@@ -5,6 +5,7 @@ app.controller('mainController', function($scope, $http) {
     $scope.userName = "Sherry Chou";
     getRecords()
     $('.tabular.menu .item').tab({history:false});
+    $('.copy_link_btn').popup();
 
 
     $scope.getResponse = function() {
