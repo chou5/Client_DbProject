@@ -60,3 +60,8 @@ span>i.code.icon:hover{
 i.copy_link_btn.copy.link.icon{
 	float:right;
 }
+
+.demo_code_segement{
+	margin-left: 1%;
+	margin-right: 3%;
+}

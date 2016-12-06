@@ -51,29 +51,29 @@
                     <ol class="ui big list">
                         <div class="subquery example">
                             <li value="*">
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
                                 <b>Subquery</b>
                                 <ol>
                                     <li value="-">
-                                        <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
-                                        <div>List all customers who paid more than the average payment of all the customers in database order by inv_id. List all customers who paid more than the average payment of all the customers in database order by inv_id.
+                                        <div>List all customers who paid more than the average payment of all the customers in database order by inv_id.
                                         </div>
                                     </li>
                                     <div ng-show="isVisible">
                                         <div class="ui hidden divider"></div>
-                                        <div class="ui basic segment">
-                                        <div class="ui existing segment" id="code_area">
-                                            <dev class="ui top attached label">
-                                                SQL Statement
-                                                <i data-content="Copy code" data-variation="inverted" class="copy_link_btn copy link icon"></i>
-                                            </dev>
-                                            <pre>
+                                        <div class="demo_code_segement">
+                                            <div class="ui existing segment" id="code_area">
+                                                <dev class="ui top attached label">
+                                                    SQL Statement
+                                                    <i data-content="Copy code" data-variation="inverted" class="copy_link_btn copy link icon"></i>
+                                                </dev>
+                                                <pre>
                                             <code class="query1">
-SELECT * FROM Invoice WHERE AmountUSD<br/>
->(SELECT AVG(AmountUSD) FROM Invoice)<br/>
-ORDER BY inv_id;
+    SELECT * FROM Invoice WHERE AmountUSD
+    >(SELECT AVG(AmountUSD) FROM Invoice)
+    ORDER BY inv_id;
                                             </code>
                                             </pre>
-                                        </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </ol>
