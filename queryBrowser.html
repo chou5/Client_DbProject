@@ -48,85 +48,94 @@
                     <div class="row">
                         <div class="twelve wide column">
                             <div class="container">
-                                <h3 class="ui header"><i class="code icon"></i>SQLite Statement</h3>
-                                <form class="ui form" ng-class="{success:requestResult.success, error: requestResult.error, warning: requestResult.warning}">
-                                    <div class="field">
-                                        <textarea id="sqlite_text" name="sqlite_text" ng-model="sqlite_text" required></textarea>
-                                    </div>
-                                    <div class="ui success message">
-                                        <div class="header">{{requestResult.success}}</div>
-                                    </div>
-                                    <div class="ui error message">
-                                        <div class="header">{{requestResult.error}}</div>
-                                    </div>
-                                    <div class="ui warning message">
-                                        <div class="header">{{requestResult.warning}}</div>
-                                    </div>
-                                    <div class="ui divider hidden"></div>
-                                    <button ng-click="runSQL()" class="ui button">
-                                        Run SQL >>
-                                    </button>
-                                </form>
+                                <div class="ui basic segment">
+                                    <h3 class="ui header"><i class="code icon"></i>SQLite Statement</h3>
+                                    <form class="ui form" ng-class="{success:requestResult.success, error: requestResult.error, warning: requestResult.warning}">
+                                        <div class="field">
+                                            <textarea id="sqlite_text" name="sqlite_text" ng-model="sqlite_text" required></textarea>
+                                        </div>
+                                        <div class="ui success message">
+                                            <div class="header">{{requestResult.success}}</div>
+                                        </div>
+                                        <div class="ui error message">
+                                            <div class="header">{{requestResult.error}}</div>
+                                        </div>
+                                        <div class="ui warning message">
+                                            <div class="header">{{requestResult.warning}}</div>
+                                        </div>
+                                        <div class="ui divider hidden"></div>
+                                        <button ng-click="runSQL()" class="ui button">
+                                            Run SQL >>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         <div class="four wide column">
                             <div class="container">
-                                <h3 class="ui header"><i class="database icon"></i>Our Database</h3>
-                                <table class="ui basic table">
-                                    <thead>
-                                        <tr>
-                                            <th>Table Name</th>
-                                            <th>Records</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="row in getRecords.tables">
-                                            <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.table_name)">{{row.table_name}}</a></td>
-                                            <td>{{row.record_num}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="ui divider hidden"></div>
-                                <table class="ui basic table" ng-if="getRecords.views">
-                                    <thead>
-                                        <tr>
-                                            <th>View Name</th>
-                                            <th>Records</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="row in getRecords.views">
-                                            <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.view_name)">{{row.view_name}}</td>
-                                            <td>{{row.record_num}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <div class="ui basic segment">
+                                    <h3 class="ui header"><i class="database icon"></i>Our Database</h3>
+                                    <table class="ui basic table">
+                                        <thead>
+                                            <tr>
+                                                <th>Table Name</th>
+                                                <th>Records</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="row in getRecords.tables">
+                                                <td><a href target="_blank" name="selectTableName" ng-click="selectTableName(row.table_name)">{{row.table_name}}</a></td>
+                                                <td>{{row.record_num}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="ui divider hidden"></div>
+                                    <table class="ui basic table" ng-if="getRecords.views">
+                                        <thead>
+                                            <tr>
+                                                <th>View Name</th>
+                                                <th>Records</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="row in getRecords.views">
+                                                <td>
+                                                    <a href target="_blank" name="selectTableName" ng-click="selectTableName(row.view_name)"></a>{{row.view_name}}</td>
+                                                <td>{{row.record_num}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>         
+                        </div>
                     </div>
                 </div>
                 <div class="ui divider"></div>
                 <div class="ui grid">
                     <div class="row">
                         <div class="sixteen wide column">
-                            <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
-                            <div class="result_table" ng-if="requestResult.table">
-                                <h4>Number of Records: {{requestResult.table_num}}</h4>
-                                <table class="ui celled striped table">
-                                    <thead>
-                                        <tr>
-                                            <th ng-repeat="name in requestResult.table_name">{{name}}</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="row in requestResult.table">
-                                            <td ng-repeat="ele in row">{{ele}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="ui basic segment">
+                                <h3 class="ui header"><i class="list layout icon"></i>Result</h3>
+                                <div class="result_table" ng-if="requestResult.table">
+                                    <h4>Number of Records: {{requestResult.table_num}}</h4>
+                                    <table class="ui celled striped table">
+                                        <thead>
+                                            <tr>
+                                                <th ng-repeat="name in requestResult.table_name">{{name}}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="row in requestResult.table">
+                                                <td ng-repeat="ele in row">{{ele}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="notice_msg" ng-if="requestResult.notice">
-                                <h4>{{requestResult.notice}}</h4>
+                            <div class="ui basic segment" ng-if="requestResult.notice">
+                                <div class="notice_msg">
+                                    <h4>{{requestResult.notice}}</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
