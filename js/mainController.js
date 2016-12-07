@@ -10,6 +10,7 @@ app.controller('mainController', function($scope, $http) {
     $scope.copy_to_clipbpard = function(obj){
         console.log("Pass the html element to controller.");
         console.log(obj.target.attributes[4].value);
+        window.getSelection().addRange(obj.target);
     }
 
 

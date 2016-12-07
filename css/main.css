@@ -75,3 +75,7 @@ p.big {
     line-height: 200%;
     font-size: 18px;
 }
+
+ol.ui.big.list.goal_list.list > li{
+	line-height: 2rem !important;
+}
