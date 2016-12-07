@@ -4,13 +4,13 @@ app.controller('mainController', function($scope, $http) {
 
     $scope.userName = "Sherry Chou";
     getRecords()
-    $('.tabular.menu .item').tab({history:false});
+    $('.tabular.menu .item').tab({ history: false });
     $('.copy_link_btn').popup();
 
-    $scope.copy_to_clipbpard = function(obj){
+    $scope.copy_to_clipbpard = function(obj) {
         console.log("Pass the html element to controller.");
-        console.log(obj.target.attributes[4].value);
-        window.getSelection().addRange(obj.target);
+        obj.target.attributes[2].value = "Copy to clipbpard";
+        console.log(obj.target.attributes[2].value);
     }
 
 
@@ -65,11 +65,11 @@ app.controller('mainController', function($scope, $http) {
 
     }
 
-    $scope.sendForm = function(){
-        
+    $scope.sendForm = function() {
+
         sendData = {
-            'first_name':$scope.first_name,
-            'last_name':$scope.last_name
+            'first_name': $scope.first_name,
+            'last_name': $scope.last_name
         }
 
         console.log("Http Request /sendForm - input :");
@@ -91,7 +91,7 @@ app.controller('mainController', function($scope, $http) {
 
     }
 
-    $scope.sendCusForm = function(){
+    $scope.sendCusForm = function() {
         $scope.cus_address = null;
         sendData = {
             'cus_name': $scope.cus_name,
@@ -110,7 +110,7 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/sendCusForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendCusForm - output :");
             var result = response.data;
             console.log(result);
@@ -121,7 +121,7 @@ app.controller('mainController', function($scope, $http) {
     }
 
 
-    $scope.sendEmpForm = function(){
+    $scope.sendEmpForm = function() {
         sendData = {
             'emp_fname': $scope.emp_fname,
             'emp_lname': $scope.emp_lname,
@@ -142,7 +142,7 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/sendEmpForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendEmpForm - output :");
             var result = response.data;
             console.log(result);
@@ -152,8 +152,8 @@ app.controller('mainController', function($scope, $http) {
 
     }
 
-    $scope.sendPubForm = function(){
-        $scope.pub_address=null;
+    $scope.sendPubForm = function() {
+        $scope.pub_address = null;
         sendData = {
             'pub_name': $scope.pub_name,
             'pub_empId': $scope.pub_empId,
@@ -171,7 +171,7 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/sendPubForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendPubForm - output :");
             var result = response.data;
             console.log(result);
@@ -182,7 +182,7 @@ app.controller('mainController', function($scope, $http) {
     }
 
 
-    $scope.sendProdForm = function(){
+    $scope.sendProdForm = function() {
         sendData = {
             'prod_name': $scope.prod_name,
             'prod_pubId': $scope.prod_pubId,
@@ -199,7 +199,7 @@ app.controller('mainController', function($scope, $http) {
             method: "POST",
             url: getIP() + "/sendProdForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendProdForm - output :");
             var result = response.data;
             console.log(result);
@@ -210,8 +210,8 @@ app.controller('mainController', function($scope, $http) {
     }
 
 
-$scope.sendOrdForm = function(){
-        $scope.ord_note=null;
+    $scope.sendOrdForm = function() {
+        $scope.ord_note = null;
         sendData = {
             'ord_prodId': $scope.ord_prodId,
             'ord_invId': $scope.ord_invId,
@@ -230,7 +230,7 @@ $scope.sendOrdForm = function(){
             method: "POST",
             url: getIP() + "/sendOrdForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendOrdForm - output :");
             var result = response.data;
             console.log(result);
@@ -240,7 +240,7 @@ $scope.sendOrdForm = function(){
 
     }
 
-    $scope.sendInvForm = function(){
+    $scope.sendInvForm = function() {
         $scope.inv_note = null;
         sendData = {
             'inv_number': $scope.inv_number,
@@ -260,7 +260,7 @@ $scope.sendOrdForm = function(){
             method: "POST",
             url: getIP() + "/sendInvForm",
             data: sendData
-        }).then(function(response){
+        }).then(function(response) {
             console.log("Http Request / sendInvForm - output :");
             var result = response.data;
             console.log(result);
@@ -270,7 +270,7 @@ $scope.sendOrdForm = function(){
 
     }
 
-    $scope.runSQL = function(){
+    $scope.runSQL = function() {
         sendData = {
             'sqlite_text': $scope.sqlite_text
         }
@@ -282,17 +282,17 @@ $scope.sendOrdForm = function(){
             method: "POST",
             url: getIP() + "/runSQL",
             data: sendData
-        }).then(function successCallback(response){
+        }).then(function successCallback(response) {
             console.log("Http Request / runSQL - output :");
             var result = response.data;
             console.log(result);
-            $scope.requestResult = result;   
-            getRecords()   
+            $scope.requestResult = result;
+            getRecords()
         });
     }
 
 
-    $scope.selectTableName = function(table_name){
+    $scope.selectTableName = function(table_name) {
 
         var string = 'SELECT * FROM ' + table_name + ';'
         $scope.sqlite_text = string
@@ -309,35 +309,37 @@ $scope.sendOrdForm = function(){
             method: "POST",
             url: getIP() + "/selectTableName",
             data: sendData
-        }).then(function successCallback(response){
+        }).then(function successCallback(response) {
             console.log("Http Request / selectTableName - output :");
             var result = response.data;
             console.log(result);
-            $scope.requestResult = result;      
+            $scope.requestResult = result;
         });
     }
 
-    $scope.isVisible = {'subquery': false,
-                        'join_table': false,
-                        'group_by': false,
-                        'other': false};
-    $scope.showCode = function(query){
+    $scope.isVisible = {
+        'subquery': false,
+        'join_table': false,
+        'group_by': false,
+        'other': false
+    };
+    $scope.showCode = function(query) {
         sendData = {
             'description': 'User click the showCode button',
         }
         console.log("Http Request /showCode - input :");
         console.log(sendData);
 
-        if ($scope.isVisible[query] == false){
+        if ($scope.isVisible[query] == false) {
             $scope.isVisible[query] = true;
-        } else{
+        } else {
             $scope.isVisible[query] = false;
         }
 
     }
 
 
-    function getRecords(){
+    function getRecords() {
         sendData = {
             'description': 'Get table records when user loads query browser page'
         }
@@ -346,7 +348,7 @@ $scope.sendOrdForm = function(){
             method: "POST",
             url: getIP() + "/getRecords",
             data: sendData
-        }).then(function successCallback(response){
+        }).then(function successCallback(response) {
             console.log("Http Request / getRecords - output : ");
             var result = response.data;
             console.log(result);
