@@ -10,8 +10,8 @@
     background: #452f54;
 }
 
-.ui.left.sidebar{
-	width:210px;
+.ui.left.sidebar {
+    width: 210px;
 }
 
 .ui.header {
@@ -23,45 +23,55 @@
     font-size: 1.14285714rem;
 }
 
-#sqlite_text{
-	height: 16em;
+#sqlite_text {
+    height: 16em;
 }
 
-a:link{
-	text-decoration: none;
+a:link {
+    text-decoration: none;
 }
 
-a:visited{
-	text-decoration: none;
+a:visited {
+    text-decoration: none;
 }
 
-a:hover{
-	text-decoration: underline;
+a:hover {
+    text-decoration: underline;
 }
 
-a:active{
-	text-decoration: underline;
+a:active {
+    text-decoration: underline;
 }
 
-h3>img.header_icon{
-	width:3% !important;
-	margin-top: -1% !important;
+h3>img.header_icon {
+    width: 3% !important;
+    margin-top: -1% !important;
 }
 
-span>i.code.icon:hover{
-	font-weight: bold;
-	cursor: pointer;
+span>i.code.icon:hover {
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.code.trigger.btn{
-	float:right;
+.code.trigger.btn {
+    float: right;
 }
 
-i.copy_link_btn.copy.link.icon{
-	float:right;
+i.copy_link_btn.copy.link.icon {
+    float: right;
 }
 
-.demo_code_segement{
-	margin-left: 1%;
-	margin-right: 3%;
+.demo_code_segement {
+    margin-left: 1%;
+    margin-right: 3%;
+}
+
+.goal_list li {
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+p.big {
+    line-height: 200%;
+    font-size: 18px;
 }

@@ -50,397 +50,424 @@
                 <div class="container">
                     <div class="ui basic segment">
                         <h3 class="ui header"><i class="table icon"></i>Table Dictionary</h3>
-                        <table class="ui celled structured table">
-                            <thead>
-                                <tr>
-                                    <th>Table Name</th>
-                                    <th>Attribute Name</th>
-                                    <th>Comment</th>
-                                    <th>Data Type</th>
-                                    <th>Format</th>
-                                    <th>PK/FK</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="8">Customer</td>
-                                    <td>cus_id</td>
-                                    <td>Customer ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>name</td>
-                                    <td>Customer Name</td>
-                                    <td>VARCHAR(30)</td>
-                                    <td>Xxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>contact_person</td>
-                                    <td>Contact Person</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>email</td>
-                                    <td>Email Address</td>
-                                    <td>VARCHAR(30)</td>
-                                    <td>xxxxx@xxxxx.xxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>phone</td>
-                                    <td>Phone Number</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>99-999-999-9999</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>address</td>
-                                    <td>Customer Address</td>
-                                    <td>VARCHAR(50)</td>
-                                    <td>Xxxxxxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>region</td>
-                                    <td>Country/Region</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>sales_person_id</td>
-                                    <td>Sales Person ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="11">Employee</td>
-                                    <td>emp_id</td>
-                                    <td>Employee ID</td>
-                                    <td>INT</td>
-                                    <td>999</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>fname</td>
-                                    <td>First Name</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>lname</td>
-                                    <td>Last Name</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>title</td>
-                                    <td>Employee Title</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>department</td>
-                                    <td>Department</td>
-                                    <td>VARCHAR(10)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>base_region</td>
-                                    <td>Base Region</td>
-                                    <td>VARCHAR(10)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>email</td>
-                                    <td>Email Address</td>
-                                    <td>VARCHAR(30)</td>
-                                    <td>xxxxx@xxxxx.xxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>phone</td>
-                                    <td>Phone Number</td>
-                                    <td>VARCHAR(15)</td>
-                                    <td>9999-999-999</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>gender</td>
-                                    <td>Gender</td>
-                                    <td>VARCHAR(10)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>dob</td>
-                                    <td>Date Of Birth</td>
-                                    <td>Date</td>
-                                    <td>yyyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>start_date</td>
-                                    <td>Start Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="9">Invoice</td>
-                                    <td>inv_id</td>
-                                    <td>Invoice ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>inv_number</td>
-                                    <td>Invoice Number</td>
-                                    <td>VARCHAR(10)</td>
-                                    <td>xxxxxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>cus_id</td>
-                                    <td>Customer ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                                <tr>
-                                    <td>issued_date</td>
-                                    <td>Issued Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>quarter</td>
-                                    <td>Quarter of The Year</td>
-                                    <td>VARCHAR(15)</td>
-                                    <td>xxxx-Qx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>payment_date</td>
-                                    <td>Payment Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>amountUSD</td>
-                                    <td>Amount in USD</td>
-                                    <td>Decimal(numeric)</td>
-                                    <td>0.00</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>amountNTD</td>
-                                    <td>Amount in NTD</td>
-                                    <td>Decimal(numeric)</td>
-                                    <td>0.00</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>note</td>
-                                    <td>Note About The Order</td>
-                                    <td>VARCHAR(50)</td>
-                                    <td>Xxxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="9">Orders</td>
-                                    <td>ord_id</td>
-                                    <td>Order ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>prod_id</td>
-                                    <td>Product ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                                <tr>
-                                    <td>amount</td>
-                                    <td>Amount</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>priceNTD</td>
-                                    <td>Price in NTD</td>
-                                    <td>Decimal(numeric)</td>
-                                    <td>0.00</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>inv_id</td>
-                                    <td>Invoice ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                                <tr>
-                                    <td>ord_date</td>
-                                    <td>Order Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>sub_start_date</td>
-                                    <td>Subscription Start Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>sub_end_date</td>
-                                    <td>Subscription End Date</td>
-                                    <td>Date</td>
-                                    <td>yyyy-mm-dd</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>note</td>
-                                    <td>Note About The Orders</td>
-                                    <td>VARCHAR(50)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="7">Product</td>
-                                    <td>prod_id</td>
-                                    <td>Product ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>name</td>
-                                    <td>Product Name</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>pub_id</td>
-                                    <td>Publisher ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                                <tr>
-                                    <td>subscription_model</td>
-                                    <td>Subscription Model</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>type</td>
-                                    <td>Product Type</td>
-                                    <td>VARCHAR(15)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>priceUSD</td>
-                                    <td>Price in USD</td>
-                                    <td>Decimal(numeric)</td>
-                                    <td>0.00</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>priceNTD</td>
-                                    <td>Price in NTD</td>
-                                    <td>Decimal(numeric)</td>
-                                    <td>0.00</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="8">Publisher</td>
-                                    <td>pub_id</td>
-                                    <td>Publisher</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>PK</td>
-                                </tr>
-                                <tr>
-                                    <td>name</td>
-                                    <td>Publisher Name</td>
-                                    <td>VARCHAR(30)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>country</td>
-                                    <td>Country</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>phone</td>
-                                    <td>Phone Number</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>99-999-999-9999</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>address</td>
-                                    <td>Publisher Address</td>
-                                    <td>VARCHAR(50)</td>
-                                    <td>Xxxxxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>email</td>
-                                    <td>Email Address</td>
-                                    <td>VARCHAR(30)</td>
-                                    <td>xxxxx@xxxxx.xxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>contact_person</td>
-                                    <td>Contact Person</td>
-                                    <td>VARCHAR(20)</td>
-                                    <td>Xxxxxx</td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <td>prod_specialist_id</td>
-                                    <td>Product Specialist ID</td>
-                                    <td>INT</td>
-                                    <td>99</td>
-                                    <td>FK</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="ui centered grid">
+                            <div class="row">
+                                <div class="very relaxed fourteen wide column">
+                                    <table class="ui celled structured table">
+                                        <thead>
+                                            <tr>
+                                                <th>Table Name</th>
+                                                <th>Attribute Name</th>
+                                                <th>Comment</th>
+                                                <th>Data Type</th>
+                                                <th>Format</th>
+                                                <th>PK/FK</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="8">Customer</td>
+                                                <td>cus_id</td>
+                                                <td>Customer ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>name</td>
+                                                <td>Customer Name</td>
+                                                <td>VARCHAR(30)</td>
+                                                <td>Xxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>contact_person</td>
+                                                <td>Contact Person</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>email</td>
+                                                <td>Email Address</td>
+                                                <td>VARCHAR(30)</td>
+                                                <td>xxxxx@xxxxx.xxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>phone</td>
+                                                <td>Phone Number</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>99-999-999-9999</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>address</td>
+                                                <td>Customer Address</td>
+                                                <td>VARCHAR(50)</td>
+                                                <td>Xxxxxxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>region</td>
+                                                <td>Country/Region</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>sales_person_id</td>
+                                                <td>Sales Person ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="11">Employee</td>
+                                                <td>emp_id</td>
+                                                <td>Employee ID</td>
+                                                <td>INT</td>
+                                                <td>999</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>fname</td>
+                                                <td>First Name</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>lname</td>
+                                                <td>Last Name</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>title</td>
+                                                <td>Employee Title</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>department</td>
+                                                <td>Department</td>
+                                                <td>VARCHAR(10)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>base_region</td>
+                                                <td>Base Region</td>
+                                                <td>VARCHAR(10)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>email</td>
+                                                <td>Email Address</td>
+                                                <td>VARCHAR(30)</td>
+                                                <td>xxxxx@xxxxx.xxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>phone</td>
+                                                <td>Phone Number</td>
+                                                <td>VARCHAR(15)</td>
+                                                <td>9999-999-999</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>gender</td>
+                                                <td>Gender</td>
+                                                <td>VARCHAR(10)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>dob</td>
+                                                <td>Date Of Birth</td>
+                                                <td>Date</td>
+                                                <td>yyyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>start_date</td>
+                                                <td>Start Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="9">Invoice</td>
+                                                <td>inv_id</td>
+                                                <td>Invoice ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>inv_number</td>
+                                                <td>Invoice Number</td>
+                                                <td>VARCHAR(10)</td>
+                                                <td>xxxxxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>cus_id</td>
+                                                <td>Customer ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>issued_date</td>
+                                                <td>Issued Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>quarter</td>
+                                                <td>Quarter of The Year</td>
+                                                <td>VARCHAR(15)</td>
+                                                <td>xxxx-Qx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>payment_date</td>
+                                                <td>Payment Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>amountUSD</td>
+                                                <td>Amount in USD</td>
+                                                <td>Decimal(numeric)</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>amountNTD</td>
+                                                <td>Amount in NTD</td>
+                                                <td>Decimal(numeric)</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>note</td>
+                                                <td>Note About The Order</td>
+                                                <td>VARCHAR(50)</td>
+                                                <td>Xxxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="9">Orders</td>
+                                                <td>ord_id</td>
+                                                <td>Order ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>prod_id</td>
+                                                <td>Product ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>amount</td>
+                                                <td>Amount</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>priceNTD</td>
+                                                <td>Price in NTD</td>
+                                                <td>Decimal(numeric)</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>inv_id</td>
+                                                <td>Invoice ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ord_date</td>
+                                                <td>Order Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>sub_start_date</td>
+                                                <td>Subscription Start Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>sub_end_date</td>
+                                                <td>Subscription End Date</td>
+                                                <td>Date</td>
+                                                <td>yyyy-mm-dd</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>note</td>
+                                                <td>Note About The Orders</td>
+                                                <td>VARCHAR(50)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="7">Product</td>
+                                                <td>prod_id</td>
+                                                <td>Product ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>name</td>
+                                                <td>Product Name</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>pub_id</td>
+                                                <td>Publisher ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>subscription_model</td>
+                                                <td>Subscription Model</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>type</td>
+                                                <td>Product Type</td>
+                                                <td>VARCHAR(15)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>priceUSD</td>
+                                                <td>Price in USD</td>
+                                                <td>Decimal(numeric)</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>priceNTD</td>
+                                                <td>Price in NTD</td>
+                                                <td>Decimal(numeric)</td>
+                                                <td>0.00</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="8">Publisher</td>
+                                                <td>pub_id</td>
+                                                <td>Publisher</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>PK</td>
+                                            </tr>
+                                            <tr>
+                                                <td>name</td>
+                                                <td>Publisher Name</td>
+                                                <td>VARCHAR(30)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>country</td>
+                                                <td>Country</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>phone</td>
+                                                <td>Phone Number</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>99-999-999-9999</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>address</td>
+                                                <td>Publisher Address</td>
+                                                <td>VARCHAR(50)</td>
+                                                <td>Xxxxxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>email</td>
+                                                <td>Email Address</td>
+                                                <td>VARCHAR(30)</td>
+                                                <td>xxxxx@xxxxx.xxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>contact_person</td>
+                                                <td>Contact Person</td>
+                                                <td>VARCHAR(20)</td>
+                                                <td>Xxxxxx</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>prod_specialist_id</td>
+                                                <td>Product Specialist ID</td>
+                                                <td>INT</td>
+                                                <td>99</td>
+                                                <td>FK</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="ui larger divider hidden"></div>
                 <div class="container">
                     <div class="ui basic segment">
                         <h3 class="ui header"><img class="header_icon" src="/images/icon/diagram_icon.png">ER Diagram</h3>
-                        <img src="/images/diagram/ERD.png">
+                        <div class="ui centered grid">
+                            <div class="row">
+                                <div class="very relaxed fifteen wide column">
+                                    <div class="ui basic segment">
+                                        <img src="/images/diagram/ERD.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=container>
+                    <div class="ui basic segment">
+                        <h3 class="ui header"><i class="checkmark box icon"></i>Database Evaluation</h3>
+                        <div class="ui centered grid">
+                            <div class="row">
+                                <div class="very relaxed fourteen wide column">
+                                    <p class="big">Database is an accumulation of data that is stored over a certain period of time. Our database stores data from sales, product, and financial department. We’ve created an interface that allows every department in the company to enter and retrieve needed data by their own. This saves time and decrease workload. It also allows employees to view and share data among departments, and minimizes the effort of organizing data and creating historical sales reports. Furthermore, since historical data can be pulled out easily, company’s administrators can understand sales outcomes better and can make effective strategies and decisions in the future.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
