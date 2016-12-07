@@ -149,19 +149,19 @@
                                             <div class="ui existing segment" id="code_area">
                                                 <dev class="ui top attached label">
                                                     SQL Statement
-                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code=' SELECT c.name, i.quarter, i.amountNTD
+                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code=' SELECT c.name, i.quarter, SUM(i.amountNTD)
  FROM Invoice As i INNER JOIN Customer As c ON c.cus_id=i.cus_id
  WHERE i.quarter="2014-Q1"
- GROUP BY c.name
+ GROUP BY c.name, i.quarter
  ORDER BY c.name;'></i>
                                                 </dev>
                                                 <pre>
                                             <code class="query4">
-     SELECT c.name, i.quarter, i.amountNTD 
+     SELECT c.name, i.quarter, SUM(i.amountNTD) 
      FROM Invoice As i 
      INNER JOIN Customer As c ON c.cus_id=i.cus_id 
      WHERE i.quarter="2014-Q1" 
-     GROUP BY c.name 
+     GROUP BY c.name, i.quarter 
      ORDER BY c.name;
                                             </code>
                                             </pre>
