@@ -51,14 +51,14 @@
                     <ol class="ui big list">
                         <div class="subquery example">
                             <li value="*">
-                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode('subquery')"></i></span>
                                 <b>Subquery</b>
                                 <ol>
                                     <li value="-">
                                         <div>List all customers who paid more than the average payment of all the customers in database order by inv_id.
                                         </div>
                                     </li>
-                                    <div ng-show="isVisible">
+                                    <div ng-show="isVisible.subquery">
                                         <div class="ui hidden divider"></div>
                                         <div class="demo_code_segement">
                                             <div class="ui existing segment" id="code_area">
@@ -82,7 +82,7 @@
                         <div class="ui divider hidden"></div>
                         <div class="join_table example">
                             <li value="*">
-                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode('join_table')"></i></span>
                                 <b>Join Table Queries</b>
                                 <ol>
                                     <li value="-">
@@ -93,7 +93,7 @@
                                         <div>Retrive info about each customer, including cus_id, payment_ date, amountUSD and order by their cus_id.
                                         </div>
                                     </li>
-                                    <div ng-show="isVisible">
+                                    <div ng-show="isVisible.join_table">
                                         <div class="ui hidden divider"></div>
                                         <div class="demo_code_segement">
                                             <div class="ui existing segment" id="code_area">
@@ -132,14 +132,14 @@
                         <div class="ui divider hidden"></div>
                         <div class="group_by example">
                             <li value="*">
-                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode('group_by')"></i></span>
                                 <b>Group By Query</b>
                                 <ol>
                                     <li value="-">
                                         <div> Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. Also order first by contact person then by customer name.
                                         </div>
                                     </li>
-                                    <div ng-show="isVisible">
+                                    <div ng-show="isVisible.group_by">
                                         <div class="ui hidden divider"></div>
                                         <div class="demo_code_segement">
                                             <div class="ui existing segment" id="code_area">
@@ -164,14 +164,14 @@
                                                 <div class="ui divider hidden"></div>
                         <div class="other example">
                             <li value="*">
-                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode('other')"></i></span>
                                 <b>Other Query</b>
                                 <ol>
                                     <li value="-">
                                         <div> Create a view called Payment that includes cus_id and the amountUSD renames as paymentamount for all the customers that have a paymentUSD greater than $9000.
                                         </div>
                                     </li>
-                                    <div ng-show="isVisible">
+                                    <div ng-show="isVisible.other">
                                         <div class="ui hidden divider"></div>
                                         <div class="demo_code_segement">
                                             <div class="ui existing segment" id="code_area">

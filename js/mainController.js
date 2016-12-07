@@ -316,15 +316,23 @@ $scope.sendOrdForm = function(){
         });
     }
 
-    $scope.isVisible = false;
-    $scope.showCode = function(){
+    $scope.isVisible = {'subquery': false,
+                        'join_table': false,
+                        'group_by': false,
+                        'other': false};
+    $scope.showCode = function(query){
         sendData = {
             'description': 'User click the showCode button',
         }
         console.log("Http Request /showCode - input :");
         console.log(sendData);
 
-        $scope.isVisible = $scope.isVisible ? false : true;
+        if ($scope.isVisible[query] == false){
+            $scope.isVisible[query] = true;
+        } else{
+            $scope.isVisible[query] = false;
+        }
+
     }
 
 
