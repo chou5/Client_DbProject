@@ -8,9 +8,7 @@ app.controller('mainController', function($scope, $http) {
     $('.copy_link_btn').popup();
 
     $scope.copy_to_clipbpard = function(obj) {
-        console.log("Pass the html element to controller.");
-        obj.target.attributes[2].value = "Copy to clipbpard";
-        console.log(obj.target.attributes[2].value);
+
     }
 
 
