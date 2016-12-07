@@ -41,7 +41,7 @@
                     <i class="big video play icon"></i>
                     <div class="content">Demo
                         <div class="sub header">
-                            Here shows the description of queries we are going to demo. 
+                            Here shows the description of queries and their SQL statements we are going to demo. 
                         </div>
                     </div>
                 </h1>
@@ -80,25 +80,118 @@
                             </li>
                         </div>
                         <div class="ui divider hidden"></div>
-                        <li value="*"><b>Join table queries</b>
-                            <ol>
-                                <li value="-">Retrieve info about a customer named JSTOR, including the name and payment date.</li>
-                                <li value="-">Retrive info about each customer, including cus_id, payment_ date, amountUSD and order by their cus_id.</li>
-                            </ol>
-                        </li>
-                        <li value="*"><b>Group by query</b>
-                            <ol>
-                                <li value="-">
-                                    <p>Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. </p>
-                                    <p>Also order first by contact person then by customer name.</p>
-                                </li>
-                            </ol>
-                        </li>
-                        <li value="*"><b>Other query</b>
-                            <ol>
-                                <li value="-">Create a view called Payment that includes cus_id and the amountUSD renames as paymentamount for all the customers that have a paymentUSD greater than $9000.</li>
-                            </ol>
-                        </li>
+                        <div class="join_table example">
+                            <li value="*">
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <b>Join Table Queries</b>
+                                <ol>
+                                    <li value="-">
+                                        <div>Retrieve info about a customer named JSTOR, including the name and payment date.
+                                        </div>
+                                    </li>
+                                    <li value="-">
+                                        <div>Retrive info about each customer, including cus_id, payment_ date, amountUSD and order by their cus_id.
+                                        </div>
+                                    </li>
+                                    <div ng-show="isVisible">
+                                        <div class="ui hidden divider"></div>
+                                        <div class="demo_code_segement">
+                                            <div class="ui existing segment" id="code_area">
+                                                <dev class="ui top attached label">
+                                                    SQL Statement
+                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code="SELECT name, payment_date FROM customer JOIN Invoice ON Customer.cus_id=Invoice.cus_id WHERE name='JSTOR';"></i>
+                                                </dev>
+                                                <pre>
+                                            <code class="query2">
+   SELECT name, payment_date 
+   FROM customer 
+   JOIN Invoice ON Customer.cus_id=Invoice.cus_id 
+   WHERE name='JSTOR';
+                                            </code>
+                                            </pre>
+                                            </div>
+                                            <div class="ui existing segment" id="code_area">
+                                                <dev class="ui top attached label">
+                                                    SQL Statement
+                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code="SELECT Invoice.cus_id, Invoice.payment_date, Invoice.amountUSD FROM Invoice JOIN Customer ON Customer.cus_id=Invoice.cus_id ORDER BY Customer.cus_id;"></i>
+                                                </dev>
+                                                <pre>
+                                            <code class="query3">
+   SELECT Invoice.cus_id, Invoice.payment_date, Invoice.amountUSD 
+   FROM Invoice 
+   JOIN Customer ON Customer.cus_id=Invoice.cus_id 
+   ORDER BY Customer.cus_id;
+                                            </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </li>
+                        </div>
+                        <div class="ui divider hidden"></div>
+                        <div class="group_by example">
+                            <li value="*">
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <b>Group By Query</b>
+                                <ol>
+                                    <li value="-">
+                                        <div> Finding out how many customers have the same contact person, grouped first by contact person, and then by customer name. Also order first by contact person then by customer name.
+                                        </div>
+                                    </li>
+                                    <div ng-show="isVisible">
+                                        <div class="ui hidden divider"></div>
+                                        <div class="demo_code_segement">
+                                            <div class="ui existing segment" id="code_area">
+                                                <dev class="ui top attached label">
+                                                    SQL Statement
+                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code="SELECT COUNT(*), name, contact_person FROM Customer GROUP BY contact_person, name ORDER BY contact_person, name;"></i>
+                                                </dev>
+                                                <pre>
+                                            <code class="query4">
+    SELECT COUNT(*), name, contact_person 
+    FROM Customer 
+    GROUP BY contact_person, name 
+    ORDER BY contact_person, name;
+                                            </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </li>
+                        </div>
+                                                <div class="ui divider hidden"></div>
+                        <div class="other example">
+                            <li value="*">
+                                <span class="code trigger btn"><i class="code icon" ng-click="showCode()"></i></span>
+                                <b>Other Query</b>
+                                <ol>
+                                    <li value="-">
+                                        <div> Create a view called Payment that includes cus_id and the amountUSD renames as paymentamount for all the customers that have a paymentUSD greater than $9000.
+                                        </div>
+                                    </li>
+                                    <div ng-show="isVisible">
+                                        <div class="ui hidden divider"></div>
+                                        <div class="demo_code_segement">
+                                            <div class="ui existing segment" id="code_area">
+                                                <dev class="ui top attached label">
+                                                    SQL Statement
+                                                    <i data-content="Copy code" ng-click="copy_to_clipbpard($event)" data-variation="inverted" class="copy_link_btn copy link icon" code="CREATE VIEW Payment AS select cus_id, amountUSD AS PaymentAmount FROM INVOICE WHERE amountUSD>9000;"></i>
+                                                </dev>
+                                                <pre>
+                                            <code class="query5">
+    CREATE VIEW Payment AS select cus_id, amountUSD AS PaymentAmount 
+    FROM INVOICE 
+    WHERE amountUSD>9000;
+                                            </code>
+                                            </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ol>
+                            </li>
+                        </div>
                     </ol>
                 </div>
             </div>
